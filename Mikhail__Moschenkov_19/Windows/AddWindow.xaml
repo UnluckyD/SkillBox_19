@@ -1,0 +1,38 @@
+﻿<Window x:Class="Mikhail__Moschenkov_19.AddWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mikhail__Moschenkov_19.Classes"
+        mc:Ignorable="d"
+        Title="AddWindow" Height="205" Width="550" MinHeight="205" MinWidth="550">
+    <Window.DataContext>
+        <local:ViewModelCreator x:Name="VM"/>
+    </Window.DataContext>
+    <Grid>
+        <TextBox x:Name="tb_name" HorizontalAlignment="Left" Height="23" Margin="10,31,0,0" TextWrapping="Wrap" Text="{Binding Client.firstName}" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tb_lastName" HorizontalAlignment="Left" Height="23" Margin="135,31,0,0" TextWrapping="Wrap" Text="{Binding Client.lastName}" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tb_middleName" 
+                             HorizontalAlignment="Left" 
+                             Height="23" Margin="260,31,0,0" 
+                             TextWrapping="Wrap" Text="{Binding Client.middleName}" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tb_pasport" 
+                             HorizontalAlignment="Left" 
+                             Height="23" Margin="385,31,0,0" 
+                             TextWrapping="Wrap" Text="{Binding Client.pasport}" 
+                             VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tb_account" 
+                             HorizontalAlignment="Left" 
+                             Height="23" Margin="10,79,0,0" 
+                             TextWrapping="Wrap" Text="{Binding Client.account}" 
+                             VerticalAlignment="Top" Width="120"/>
+        <CheckBox x:Name="cb_IsVIP" Content="VIP" HorizontalAlignment="Left" Margin="260,81,0,0" VerticalAlignment="Top" IsChecked="{Binding Client.isVip}"/>
+        <CheckBox x:Name="cb_IsLegal" Content="Юр. лицо" HorizontalAlignment="Left" Margin="385,81,0,0" VerticalAlignment="Top" IsChecked="{Binding Client.isLegal}"/>
+        <Button x:Name="btn_add" Content="Добавить" HorizontalAlignment="Left" Margin="10,0,0,10" Width="75" Height="20" VerticalAlignment="Bottom" Command="{Binding AddClient_btn}"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Имя:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="135,10,0,0" TextWrapping="Wrap" Text="Фамилия:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="260,10,0,0" TextWrapping="Wrap" Text="Отчество:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="385,10,0,0" TextWrapping="Wrap" Text="Серия/Номер паспорта:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,59,0,0" TextWrapping="Wrap" Text="Баланс:" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

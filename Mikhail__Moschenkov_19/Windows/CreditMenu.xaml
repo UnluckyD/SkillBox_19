@@ -1,0 +1,54 @@
+﻿<Window x:Class="Mikhail__Moschenkov_19.CreditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mikhail__Moschenkov_19"
+        mc:Ignorable="d"
+        Title="CreditWindow" Height="210" Width="450" MinWidth="450" MinHeight="210">
+    <Window.DataContext>
+        <local:ViewModelCC x:Name="VMCC"/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="683*"/>
+            <ColumnDefinition Width="110"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="379*"/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="tb_client" HorizontalAlignment="Center" 
+                   Margin="5" 
+                   TextWrapping="Wrap" 
+                   Text="{Binding Client}" 
+                   VerticalAlignment="Top"/>
+        <Button x:Name="btn_credit" Content="Закрепить" 
+                Grid.Column="1" 
+                HorizontalAlignment="Right" 
+                Margin="0,30,10,0" 
+                Grid.Row="1" 
+                VerticalAlignment="Top" 
+                Width="75" Command="{Binding Credit_btn_click}"/>
+        <TextBox x:Name="tb_amount" 
+                 HorizontalAlignment="Left" 
+                 Height="23" 
+                 Margin="10,31,0,0" 
+                 Grid.Row="1" 
+                 TextWrapping="Wrap" 
+                 Text="{Binding CreditSum}" 
+                 VerticalAlignment="Top" 
+                 Width="120"/>
+        <TextBlock HorizontalAlignment="Left" 
+                   Margin="10,10,0,0" Grid.Row="1" 
+                   TextWrapping="Wrap" 
+                   Text="Сумма займа:" 
+                   VerticalAlignment="Top"/>
+        <DatePicker x:Name="dp_deadLine" 
+                    HorizontalAlignment="Left" 
+                    Margin="135,30,0,0" 
+                    Grid.Row="1" 
+                    VerticalAlignment="Top"
+                    SelectedDate="{Binding Credit.dateEnd}"/>
+    </Grid>
+</Window>

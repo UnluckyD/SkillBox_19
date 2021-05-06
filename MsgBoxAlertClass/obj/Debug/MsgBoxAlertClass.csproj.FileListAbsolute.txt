@@ -1,0 +1,6 @@
+C:\Users\User\source\repos\Mikhail__Moschenkov_19\MsgBoxAlertClass\obj\Debug\MsgBoxAlertClass.csprojAssemblyReference.cache
+C:\Users\User\source\repos\Mikhail__Moschenkov_19\MsgBoxAlertClass\obj\Debug\MsgBoxAlertClass.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Mikhail__Moschenkov_19\MsgBoxAlertClass\bin\Debug\MsgBoxAlertClass.dll
+C:\Users\User\source\repos\Mikhail__Moschenkov_19\MsgBoxAlertClass\bin\Debug\MsgBoxAlertClass.pdb
+C:\Users\User\source\repos\Mikhail__Moschenkov_19\MsgBoxAlertClass\obj\Debug\MsgBoxAlertClass.dll
+C:\Users\User\source\repos\Mikhail__Moschenkov_19\MsgBoxAlertClass\obj\Debug\MsgBoxAlertClass.pdb
