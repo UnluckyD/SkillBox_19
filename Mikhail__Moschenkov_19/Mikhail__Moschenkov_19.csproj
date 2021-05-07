@@ -143,7 +143,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Classes\SQLRepository.cs" />
+    <Compile Include="Classes\Alerts.cs" />
+    <Compile Include="Classes\SQLContributionRepository.cs" />
+    <Compile Include="Classes\SQLCreditRepository.cs" />
+    <Compile Include="Classes\SQLClientRepository.cs" />
     <Compile Include="Classes\ViewModelCE.cs" />
     <Compile Include="Classes\ViewModelCreator.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
@@ -272,12 +275,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MsgBoxAlertClass\MsgBoxAlertClass.csproj">
-      <Project>{42bb3f17-bc6b-4c2e-ae22-e57ff4700207}</Project>
-      <Name>MsgBoxAlertClass</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

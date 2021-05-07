@@ -9,7 +9,11 @@ namespace Mikhail__Moschenkov_19
 {
     public class Model : BindableBase
     {
-        Interfaces.IRepository<ClientsDB,Credit,Contribution> repository;
+        private BankSystemEntities bankSystem;
+
+        Interfaces.IRepository<ClientsDB> repositoryClients;
+        Interfaces.IRepository<Credit> repositoryCredit;
+        Interfaces.IRepository<Contribution> repositoryContribution;
 
         IEnumerable<ClientsDB> clients;
         IEnumerable<Credit> credits;
@@ -52,8 +56,8 @@ namespace Mikhail__Moschenkov_19
                 {
                     if (Transfer(client, SelectedItem, transfer_sum))
                         Alerts.MsgWarning("Один из пользователей заблокирован или возникла ошибка!");
-                    if (repository != null)
-                        repository.Save();
+                    if (repositoryClients != null)
+                        repositoryClients.Save();
                 }
             }
             catch (Exception ex)
@@ -67,7 +71,8 @@ namespace Mikhail__Moschenkov_19
             try
             {
                 SqlConnectionStringBuilder sqlConnectionString = new SqlConnectionStringBuilder(strConnections);
-                repository = new Classes.SQLRepository(sqlConnectionString.ConnectionString);
+                bankSystem = new BankSystemEntities(sqlConnectionString.ConnectionString);
+                repositoryClients = new Classes.SQLClientRepository(bankSystem);
                 LoadDB();
             }catch (Exception ex)
             {
@@ -80,11 +85,15 @@ namespace Mikhail__Moschenkov_19
             try
             {
                 if(Clients == null)
-                    repository.Load();
+                    repositoryClients.Load();
+                if (Credits == null)
+                    repositoryCredit.Load();
+                if (Contributions == null)
+                    repositoryContribution.Load();
 
-                Clients = repository.GetDBClients();
-                Credits = repository.GetDBCredits();
-                Contributions = repository.GetDBContributions();
+                Clients = repositoryClients.GetDB();
+                Credits = repositoryCredit.GetDB();
+                Contributions = repositoryContribution.GetDB();
             }
             catch(Exception ex)
             {
@@ -95,7 +104,10 @@ namespace Mikhail__Moschenkov_19
         {
             try
             {
-                repository = new Classes.SQLRepository();
+                bankSystem = new BankSystemEntities();
+                repositoryClients = new Classes.SQLClientRepository(bankSystem);
+                repositoryCredit = new Classes.SQLCreditRepository(bankSystem);
+                repositoryContribution = new Classes.SQLContributionRepository(bankSystem);
             }
             catch (Exception ex)
             {
@@ -129,9 +141,9 @@ namespace Mikhail__Moschenkov_19
         {
             try
             {
-                if (repository != null)
-                    repository.CreateClient(client);
-                repository.Save();
+                if (repositoryClients != null)
+                    repositoryClients.Create(client);
+                repositoryClients.Save();
             }
             catch (Exception ex)
             {
@@ -150,9 +162,8 @@ namespace Mikhail__Moschenkov_19
                 {
                     if (edit.DialogResult.Value)
                     {
-                        repository.UpdateClient(row);
-                        repository.Save();
-                        LoadDB();
+                        repositoryClients.Update(row);
+                        repositoryClients.Save();
                     }
                 }
                 catch (Exception ex)
@@ -171,9 +182,7 @@ namespace Mikhail__Moschenkov_19
 
                 if (tf.DialogResult.Value)
                 {
-                    // импровизированное обновление, 
-                    // которое реализованно в ClientsDB через INotifyPropertyChanged
-                    repository.Save();
+                    repositoryClients.Save();
                 }
             }
         }
@@ -187,7 +196,8 @@ namespace Mikhail__Moschenkov_19
 
                 if (CoW.DialogResult.Value)
                 {
-                    repository.Save();
+                    repositoryClients.Save();
+                    repositoryContribution.Save();
                 }
             }
         }
@@ -201,7 +211,8 @@ namespace Mikhail__Moschenkov_19
 
                 if (cw.DialogResult.Value)
                 {
-                    repository.Save();
+                    repositoryClients.Save();
+                    repositoryCredit.Save();
                 }
             }
         }
@@ -213,12 +224,13 @@ namespace Mikhail__Moschenkov_19
                 try
                 {
                     credit.Amount = creditSum;
-                    repository.CreateCredit(credit);
+                    repositoryCredit.Create(credit);
 
                     client.creditID = credit.Id;
 
                     client.account += creditSum;
-                    repository.Save();
+                    repositoryClients.Save();
+                    repositoryCredit.Save();
                 }
                 catch (SqlException ex)
                 {
@@ -235,14 +247,14 @@ namespace Mikhail__Moschenkov_19
                 {
                     if (client.account - contribution.contribut >= 0 && client.account != 0)
                     {
-                        repository.CreateContribution(contribution);
-                        repository.LoadContribution();
+                        repositoryContribution.Create(contribution);
 
-                        var a = repository.GetDBContributions().Last().Id;                     //проблема присвоения ID
+                        var a = repositoryContribution.GetDB().Last().Id;                     //проблема присвоения ID
                         
                         client.contributionID = a;
                         client.account -= contribution.contribut;
-                        repository.Save();
+                        repositoryContribution.Save();
+                        repositoryClients.Save();
                     }
                     else
                     {
@@ -261,8 +273,8 @@ namespace Mikhail__Moschenkov_19
         {
             if (client != null)
             {
-                repository.DeleteClient(client);
-                repository.Save();
+                repositoryClients.Delete(client);
+                repositoryClients.Save();
             }
         }
 

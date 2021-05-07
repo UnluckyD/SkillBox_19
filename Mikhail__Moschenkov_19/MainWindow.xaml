@@ -40,6 +40,7 @@
                 <DataGridTextColumn Header="Номер счёта" Binding="{Binding Id}" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Счёт" Binding="{Binding account}" IsReadOnly="True"/>
                 <DataGridCheckBoxColumn Header="VIP" Binding="{Binding isVip}" IsReadOnly="False"/>
+                <DataGridCheckBoxColumn Header="Юр.Лицо" Binding="{Binding isLegal}" IsReadOnly="False"/>
                 <DataGridCheckBoxColumn Header="Блок" Binding="{Binding isBanned}" IsReadOnly="False"/>
             </DataGrid.Columns>
             <DataGrid.ContextMenu>
