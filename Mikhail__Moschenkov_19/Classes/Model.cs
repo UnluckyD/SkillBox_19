@@ -73,6 +73,8 @@ namespace Mikhail__Moschenkov_19
                 SqlConnectionStringBuilder sqlConnectionString = new SqlConnectionStringBuilder(strConnections);
                 bankSystem = new BankSystemEntities(sqlConnectionString.ConnectionString);
                 repositoryClients = new Classes.SQLClientRepository(bankSystem);
+                repositoryCredit = new Classes.SQLCreditRepository(bankSystem);
+                repositoryContribution = new Classes.SQLContributionRepository(bankSystem);
                 LoadDB();
             }catch (Exception ex)
             {
@@ -108,12 +110,12 @@ namespace Mikhail__Moschenkov_19
                 repositoryClients = new Classes.SQLClientRepository(bankSystem);
                 repositoryCredit = new Classes.SQLCreditRepository(bankSystem);
                 repositoryContribution = new Classes.SQLContributionRepository(bankSystem);
+                LoadDB();
             }
             catch (Exception ex)
             {
                 Alerts.MsgError($"Ошибка при подключении:\n{ex.Message}");
             }
-            LoadDB();
         }
 
         public bool CanExecute
