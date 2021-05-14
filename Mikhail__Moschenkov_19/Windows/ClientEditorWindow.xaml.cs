@@ -11,9 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using MsgBoxAlertClass;
+using BankSystem.DataAccess;
 
-namespace Mikhail__Moschenkov_19
+namespace BankSystem
 {
     /// <summary>
     /// Логика взаимодействия для ClientEditorWindow.xaml

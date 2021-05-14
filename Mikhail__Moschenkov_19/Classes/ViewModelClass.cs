@@ -6,10 +6,10 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
+using BankSystem.DataAccess;
 using System.Windows.Input;
 
-namespace Mikhail__Moschenkov_19
+namespace BankSystem
 {
     class ViewModelClass : BindableBase
     {

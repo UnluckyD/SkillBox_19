@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace MsgBoxAlertClass
+namespace BankSystem
 {
     public static class Alerts
     {

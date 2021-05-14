@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище BankSystemModelContainer" CdmEntityContainer="BankSystemEntities">
+    <EntitySetMapping Name="ClientsDB">
+      <EntityTypeMapping TypeName="BankSystemModel.ClientsDB">
+        <MappingFragment StoreEntitySet="ClientsDB">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="incomes" ColumnName="incomes" />
+          <ScalarProperty Name="excomes" ColumnName="excomes" />
+          <ScalarProperty Name="isBanned" ColumnName="isBanned" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="middleName" ColumnName="middleName" />
+          <ScalarProperty Name="pasport" ColumnName="pasport" />
+          <ScalarProperty Name="account" ColumnName="account" />
+          <ScalarProperty Name="isVip" ColumnName="isVip" />
+          <ScalarProperty Name="isLegal" ColumnName="isLegal" />
+          <ScalarProperty Name="creditID" ColumnName="creditID" />
+          <ScalarProperty Name="contributionID" ColumnName="contributionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contribution">
+      <EntityTypeMapping TypeName="BankSystemModel.Contribution">
+        <MappingFragment StoreEntitySet="Contribution">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="dateBegin" ColumnName="dateBegin" />
+          <ScalarProperty Name="dateEnd" ColumnName="dateEnd" />
+          <ScalarProperty Name="dateLast" ColumnName="dateLast" />
+          <ScalarProperty Name="capitalization" ColumnName="capitalization" />
+          <ScalarProperty Name="contribut" ColumnName="contribut" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Credit">
+      <EntityTypeMapping TypeName="BankSystemModel.Credit">
+        <MappingFragment StoreEntitySet="Credit">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="dateBegin" ColumnName="dateBegin" />
+          <ScalarProperty Name="dateEnd" ColumnName="dateEnd" />
+          <ScalarProperty Name="dateLast" ColumnName="dateLast" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="monthly" ColumnName="monthly" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

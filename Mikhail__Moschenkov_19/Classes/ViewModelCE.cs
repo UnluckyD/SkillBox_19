@@ -3,10 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using BankSystem.DataAccess;
 using System.Windows.Input;
 
-namespace Mikhail__Moschenkov_19.Classes
+namespace BankSystem.Classes
 {
     class ViewModelCE : BindableBase // Client Editor
     {

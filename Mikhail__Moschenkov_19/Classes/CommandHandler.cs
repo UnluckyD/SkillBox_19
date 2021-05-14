@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace Mikhail__Moschenkov_19
+namespace BankSystem
 {
     class CommandHandler : ICommand
     {

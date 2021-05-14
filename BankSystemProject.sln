@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankSystem", "Mikhail__Moschenkov_19\BankSystem.csproj", "{B9D3EF2C-A803-4611-9BF7-1B0F0B9F52E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankSystem.DataAccess", "BankSystem.DataAccess\BankSystem.DataAccess.csproj", "{97A0F1AD-5771-493F-851E-10BD2B7E1E14}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B9D3EF2C-A803-4611-9BF7-1B0F0B9F52E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9D3EF2C-A803-4611-9BF7-1B0F0B9F52E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9D3EF2C-A803-4611-9BF7-1B0F0B9F52E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9D3EF2C-A803-4611-9BF7-1B0F0B9F52E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97A0F1AD-5771-493F-851E-10BD2B7E1E14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97A0F1AD-5771-493F-851E-10BD2B7E1E14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97A0F1AD-5771-493F-851E-10BD2B7E1E14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97A0F1AD-5771-493F-851E-10BD2B7E1E14}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1DF42F77-5DCA-43C3-B0D5-9C5F56594BF1}
+	EndGlobalSection
+EndGlobal

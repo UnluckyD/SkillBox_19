@@ -4,16 +4,17 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using MsgBoxAlertClass;
 using System.Linq;
+using BankSystem.DataAccess;
 
-namespace Mikhail__Moschenkov_19
+namespace BankSystem
 {
     public class Model : BindableBase
     {
         private BankSystemEntities bankSystem;
 
-        Interfaces.IRepository<ClientsDB> repositoryClients;
-        Interfaces.IRepository<Credit> repositoryCredit;
-        Interfaces.IRepository<Contribution> repositoryContribution;
+        IRepository<ClientsDB> repositoryClients;
+        IRepository<Credit> repositoryCredit;
+        IRepository<Contribution> repositoryContribution;
 
         IEnumerable<ClientsDB> clients;
         IEnumerable<Credit> credits;
@@ -72,13 +73,13 @@ namespace Mikhail__Moschenkov_19
             {
                 SqlConnectionStringBuilder sqlConnectionString = new SqlConnectionStringBuilder(strConnections);
                 bankSystem = new BankSystemEntities(sqlConnectionString.ConnectionString);
-                repositoryClients = new Classes.SQLClientRepository(bankSystem);
-                repositoryCredit = new Classes.SQLCreditRepository(bankSystem);
-                repositoryContribution = new Classes.SQLContributionRepository(bankSystem);
+                repositoryClients = new SQLClientRepository(bankSystem);
+                repositoryCredit = new SQLCreditRepository(bankSystem);
+                repositoryContribution = new SQLContributionRepository(bankSystem);
                 LoadDB();
             }catch (Exception ex)
             {
-                Alerts.MsgError($"Ошибка при подключении по строке:\n{ex.Message}");
+                BankSystem.Alerts.MsgError($"Ошибка при подключении по строке:\n{ex.Message}");
             }
         }
 
@@ -86,12 +87,9 @@ namespace Mikhail__Moschenkov_19
         {
             try
             {
-                if(Clients == null)
-                    repositoryClients.Load();
-                if (Credits == null)
-                    repositoryCredit.Load();
-                if (Contributions == null)
-                    repositoryContribution.Load();
+                repositoryClients.Load();
+                repositoryCredit.Load();
+                repositoryContribution.Load();
 
                 Clients = repositoryClients.GetDB();
                 Credits = repositoryCredit.GetDB();
@@ -107,9 +105,9 @@ namespace Mikhail__Moschenkov_19
             try
             {
                 bankSystem = new BankSystemEntities();
-                repositoryClients = new Classes.SQLClientRepository(bankSystem);
-                repositoryCredit = new Classes.SQLCreditRepository(bankSystem);
-                repositoryContribution = new Classes.SQLContributionRepository(bankSystem);
+                repositoryClients = new SQLClientRepository(bankSystem);
+                repositoryCredit = new SQLCreditRepository(bankSystem);
+                repositoryContribution = new SQLContributionRepository(bankSystem);
                 LoadDB();
             }
             catch (Exception ex)

@@ -1,13 +1,8 @@
-﻿using System;
-using System.Data;
-using System.Data.SqlClient;
-using System.Threading;
-using System.Windows;
-using System.Windows.Input;
+﻿using System.Windows;
 using System.Linq;
-using MsgBoxAlertClass;
+using BankSystem.DataAccess;
 
-namespace Mikhail__Moschenkov_19
+namespace BankSystem
 {
     /// <summary>
     /// Логика взаимодействия для CreditWindow.xaml

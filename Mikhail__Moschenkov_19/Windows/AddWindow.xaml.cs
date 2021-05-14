@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Mikhail__Moschenkov_19
+namespace BankSystem
 {
     /// <summary>
     /// Логика взаимодействия для AddWindow.xaml

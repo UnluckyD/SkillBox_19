@@ -1,10 +1,8 @@
-﻿using System;
-using System.Windows;
-using System.Windows.Input;
+﻿using System.Windows;
 using System.Linq;
-using MsgBoxAlertClass;
+using BankSystem.DataAccess;
 
-namespace Mikhail__Moschenkov_19
+namespace BankSystem
 {
     /// <summary>
     /// Логика взаимодействия для ContributionWindow.xaml

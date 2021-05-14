@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Mikhail__Moschenkov_19
+namespace BankSystem
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml

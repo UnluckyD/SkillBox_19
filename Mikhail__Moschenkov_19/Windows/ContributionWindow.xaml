@@ -1,9 +1,9 @@
-﻿<Window x:Class="Mikhail__Moschenkov_19.ContributionWindow"
+﻿<Window x:Class="BankSystem.ContributionWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Mikhail__Moschenkov_19"
+        xmlns:local="clr-namespace:BankSystem"
         mc:Ignorable="d"
         Title="ContributionWindow" Height="210" Width="450" MinWidth="450" MinHeight="210">
     <Window.DataContext>
