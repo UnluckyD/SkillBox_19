@@ -9,16 +9,18 @@
     <Window.DataContext>
         <local:ViewModelClass x:Name="VM"/>
     </Window.DataContext>
+
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="85*"/>
-            <ColumnDefinition Width="14*"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="671*"/>
+            <ColumnDefinition Width="112*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="55"/>
             <RowDefinition Height="328*"/>
         </Grid.RowDefinitions>
-        <Border BorderBrush="Black" BorderThickness="1" Margin="10,10,10,10" Grid.ColumnSpan="2">
+        <Border BorderBrush="Black" BorderThickness="1" Margin="1.383,10,10,10" Grid.ColumnSpan="2" Grid.Column="1">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="61*"/>
@@ -28,10 +30,10 @@
                 <Button x:Name="btn_connect" Margin="5,5,5,5" Grid.Column="1" Content="Connect" Command="{Binding btn_connect}" IsEnabled="True"/>
             </Grid>
         </Border>
-        <DataGrid x:Name="dg_list" Margin="10" Grid.Row="1" AutoGenerateColumns="False"
+        <DataGrid x:Name="dg_list" Margin="1.383,10,10,10" Grid.Row="1" AutoGenerateColumns="False"
                   Grid.ColumnSpan="2" 
                   ItemsSource="{Binding model.Clients}"
-                  SelectedItem="{Binding Client}">
+                  SelectedItem="{Binding Client}" Grid.Column="1">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Фамилия" Binding="{Binding lastName}" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Имя" Binding="{Binding firstName}" IsReadOnly="True"/>
@@ -54,5 +56,6 @@
                 </ContextMenu>
             </DataGrid.ContextMenu>
         </DataGrid>
+        <WrapPanel HorizontalAlignment="Left" Height="100" Margin="-148,180,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100"/>
     </Grid>
 </Window>
