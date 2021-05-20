@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BankSystem.DataAccess;
 using System.Windows.Input;
+using System.Diagnostics;
 
 namespace BankSystem
 {
@@ -58,6 +59,10 @@ namespace BankSystem
         {
             get { return new CommandHandler(() => model.transfer_btn_click(TransferClient,Client, TransferAmount), () => model.CanExecute); }
         }
-        
+
+        public ICommand GitHub_btn_click
+        {
+            get { return new CommandHandler(() => Process.Start("https://github.com/UnluckyD/SkillBox_19"), () => model.CanExecute); }
+        }
     }
 }
