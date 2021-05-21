@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace BankSystemApp
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для UserControl.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class UserControlDis : UserControl
     {
-        public MainWindow()
+        public UserControlDis()
         {
             InitializeComponent();
         }

@@ -1,8 +1,8 @@
 ﻿using System.Linq;
 using System.Windows;
-using BankSystem.DataAccess;
+using BankSystemApp.DataAccess;
 
-namespace BankSystem
+namespace BankSystemApp
 {
     /// <summary>
     /// Логика взаимодействия для TransferWindow.xaml
@@ -14,7 +14,7 @@ namespace BankSystem
             InitializeComponent();
         }
 
-        public TransferWindow(ClientsDB _client, Model model) : this()
+        public TransferWindow(ClientsDB _client, Classes.Model model) : this()
         {
             VM.model = model;
             dataGrid_client.ItemsSource = model.Clients.Where(c => c != _client);

@@ -3,14 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using BankSystem.DataAccess;
+using BankSystemApp.DataAccess;
 using System.Windows.Input;
 
-namespace BankSystem.Classes
+namespace BankSystemApp.UI.Views
 {
     class ViewModelCreator : BindableBase
     {
-        public Model model = new Model();
+        public Classes.Model model = new Classes.Model();
         ClientsDB client = new ClientsDB();
         public ClientsDB Client { get { return client; } set { client = value; RaisePropertyChanged("Client"); } }
 

@@ -1,20 +1,20 @@
-﻿Mikhail__Moschenkov_19
+﻿BankSystemApp
 
 
 winexe
 C#
 .cs
 C:\Users\User\source\repos\Mikhail__Moschenkov_19\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\
-Mikhail__Moschenkov_19
+BankSystemApp
 none
 false
 DEBUG;TRACE
 C:\Users\User\source\repos\Mikhail__Moschenkov_19\SkillBox_19\Mikhail__Moschenkov_19\App.xaml
-6-977441113
+7415334043
 
-17-307903188
+2219743756
 149404070237
-Windows\AddWindow.xaml;Windows\ClientEditorWindow.xaml;Windows\ContributionWindow.xaml;Windows\CreditMenu.xaml;MainWindow.xaml;Windows\TransferWindow.xaml;
+UserControl.xaml;Windows\AddWindow.xaml;Windows\ClientEditorWindow.xaml;Windows\ContributionWindow.xaml;Windows\CreditMenu.xaml;MainWindow.xaml;Windows\TransferWindow.xaml;
 
-False
+True
 

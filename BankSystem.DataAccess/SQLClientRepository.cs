@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Data.Entity;
 
-namespace BankSystem.DataAccess
+namespace BankSystemApp.DataAccess
 {
     public class SQLClientRepository : IRepository<ClientsDB>
     {

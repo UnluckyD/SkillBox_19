@@ -6,16 +6,17 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BankSystem.DataAccess;
+using BankSystemApp.DataAccess;
 using System.Windows.Input;
 using System.Diagnostics;
 
-namespace BankSystem
+namespace BankSystemApp.UI.Views
 {
     class ViewModelClass : BindableBase
     {
-        public Model model { get; set; } = new Model();
+        public Classes.Model model { get; set; } = new Classes.Model();
         ClientsDB client;
+        public BindableBase CurrentViewModel { get; set; }
 
         string strConnection = string.Empty;
         public string StrConnection { get => strConnection; set => strConnection = value; }

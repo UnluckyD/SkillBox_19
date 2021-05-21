@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankSystem", "Mikhail__Moschenkov_19\BankSystem.csproj", "{B9D3EF2C-A803-4611-9BF7-1B0F0B9F52E0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankSystemApp", "Mikhail__Moschenkov_19\BankSystemApp.csproj", "{B9D3EF2C-A803-4611-9BF7-1B0F0B9F52E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankSystem.DataAccess", "BankSystem.DataAccess\BankSystem.DataAccess.csproj", "{97A0F1AD-5771-493F-851E-10BD2B7E1E14}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankSystemApp.DataAccess", "BankSystem.DataAccess\BankSystemApp.DataAccess.csproj", "{97A0F1AD-5771-493F-851E-10BD2B7E1E14}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

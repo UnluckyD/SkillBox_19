@@ -9,3 +9,4 @@ C:\Users\User\source\repos\Mikhail__Moschenkov_19\SkillBox_19\BankSystem.DataAcc
 C:\Users\User\source\repos\Mikhail__Moschenkov_19\SkillBox_19\BankSystem.DataAccess\obj\Debug\BankSystem.DataAccess.csproj.CopyComplete
 C:\Users\User\source\repos\Mikhail__Moschenkov_19\SkillBox_19\BankSystem.DataAccess\obj\Debug\BankSystem.DataAccess.dll
 C:\Users\User\source\repos\Mikhail__Moschenkov_19\SkillBox_19\BankSystem.DataAccess\obj\Debug\BankSystem.DataAccess.pdb
+C:\Users\User\source\repos\Mikhail__Moschenkov_19\SkillBox_19\BankSystem.DataAccess\obj\Debug\BankSystem.DataAccess.csprojAssemblyReference.cache

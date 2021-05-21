@@ -3,14 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using BankSystem.DataAccess;
+using BankSystemApp.DataAccess;
 using System.Windows.Input;
 
-namespace BankSystem
+namespace BankSystemApp.UI.Views
 {
     class ViewModelCC : BindableBase // ViewModelCreditContribution
     {
-        public Model model = new Model();
+        public Classes.Model model = new Classes.Model();
         ClientsDB client;
         Credit credit;
         Contribution contribution;

@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BankSystemApp.DataAccess
+namespace BankSystemApp.UI.Views
 {
-    public enum BankValues
+    class LoginViewModel
     {
-        creditProcentPerYear = 13,
-        contributionProcentPerYear = 6
     }
 }

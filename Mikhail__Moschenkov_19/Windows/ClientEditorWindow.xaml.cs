@@ -11,9 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using BankSystem.DataAccess;
+using BankSystemApp.DataAccess;
 
-namespace BankSystem
+namespace BankSystemApp
 {
     /// <summary>
     /// Логика взаимодействия для ClientEditorWindow.xaml

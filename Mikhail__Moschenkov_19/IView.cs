@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BankSystemApp.DataAccess
+namespace BankSystemApp
 {
-    public enum BankValues
+    interface IView
     {
-        creditProcentPerYear = 13,
-        contributionProcentPerYear = 6
+
     }
 }

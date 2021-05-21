@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace BankSystem
+namespace BankSystemApp
 {
     public static class Alerts
     {

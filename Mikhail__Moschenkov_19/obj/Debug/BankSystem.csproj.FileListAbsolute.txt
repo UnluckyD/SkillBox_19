@@ -85,3 +85,4 @@ C:\Users\User\source\repos\Mikhail__Moschenkov_19\SkillBox_19\Mikhail__Moschenko
 C:\Users\User\source\repos\Mikhail__Moschenkov_19\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\BankSystem.csproj.CoreCompileInputs.cache
 C:\Users\User\source\repos\Mikhail__Moschenkov_19\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\BankSystem.csproj.CopyComplete
 C:\Users\User\source\repos\Mikhail__Moschenkov_19\SkillBox_19\Mikhail__Moschenkov_19\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\User\source\repos\Mikhail__Moschenkov_19\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\UserControl.g.cs

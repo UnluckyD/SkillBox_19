@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BankSystem.DataAccess
+namespace BankSystemApp.DataAccess
 {
     using System;
     using System.Collections.Generic;

@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace BankSystem
+namespace BankSystemApp
 {
     /// <summary>
     /// Логика взаимодействия для AddWindow.xaml
@@ -23,7 +23,7 @@ namespace BankSystem
         {
             InitializeComponent();
         }
-        public AddWindow(Model model):this()
+        public AddWindow(Classes.Model model):this()
         {
             VM.model = model;
         }

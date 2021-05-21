@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BankSystem.DataAccess
+namespace BankSystemApp.DataAccess
 {
     public class SQLCreditRepository : IRepository<Credit>
     {

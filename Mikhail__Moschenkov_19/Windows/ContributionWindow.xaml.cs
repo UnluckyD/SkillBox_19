@@ -1,8 +1,8 @@
 ﻿using System.Windows;
 using System.Linq;
-using BankSystem.DataAccess;
+using BankSystemApp.DataAccess;
 
-namespace BankSystem
+namespace BankSystemApp
 {
     /// <summary>
     /// Логика взаимодействия для ContributionWindow.xaml
@@ -14,7 +14,7 @@ namespace BankSystem
             InitializeComponent();
         }
 
-        public ContributionWindow(ClientsDB _client, Model model) : this()
+        public ContributionWindow(ClientsDB _client, Classes.Model model) : this()
         {
             VMCC.model = model;
             VMCC.Client = _client;

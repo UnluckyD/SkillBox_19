@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{B9D3EF2C-A803-4611-9BF7-1B0F0B9F52E0}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Mikhail__Moschenkov_19</RootNamespace>
-    <AssemblyName>Mikhail__Moschenkov_19</AssemblyName>
+    <RootNamespace>BankSystemApp</RootNamespace>
+    <AssemblyName>BankSystemApp</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -147,8 +147,14 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Classes\Alerts.cs" />
-    <Compile Include="Classes\ViewModelCE.cs" />
-    <Compile Include="Classes\ViewModelCreator.cs" />
+    <Compile Include="UI\Views\LoginViewModel.cs" />
+    <Compile Include="UI\Views\ViewModelCE.cs" />
+    <Compile Include="UI\Views\ViewModelCreator.cs" />
+    <Compile Include="IView.cs" />
+    <Compile Include="UI\Views\LoginView.cs" />
+    <Compile Include="UserControl.xaml.cs">
+      <DependentUpon>UserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\AddWindow.xaml.cs">
       <DependentUpon>AddWindow.xaml</DependentUpon>
     </Compile>
@@ -166,8 +172,12 @@
     <Compile Include="Windows\TransferWindow.xaml.cs">
       <DependentUpon>TransferWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Classes\ViewModelCC.cs" />
-    <Compile Include="Classes\ViewModelClass.cs" />
+    <Compile Include="UI\Views\ViewModelCC.cs" />
+    <Compile Include="UI\Views\ViewModelClass.cs" />
+    <Page Include="UserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\AddWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -232,9 +242,9 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BankSystem.DataAccess\BankSystem.DataAccess.csproj">
+    <ProjectReference Include="..\BankSystem.DataAccess\BankSystemApp.DataAccess.csproj">
       <Project>{97a0f1ad-5771-493f-851e-10bd2b7e1e14}</Project>
-      <Name>BankSystem.DataAccess</Name>
+      <Name>BankSystemApp.DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

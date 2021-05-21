@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using MsgBoxAlertClass;
 using System.Linq;
-using BankSystem.DataAccess;
+using BankSystemApp.DataAccess;
 
-namespace BankSystem
+namespace BankSystemApp.Classes
 {
     public class Model : BindableBase
     {
@@ -79,7 +79,7 @@ namespace BankSystem
                 LoadDB();
             }catch (Exception ex)
             {
-                BankSystem.Alerts.MsgError($"Ошибка при подключении по строке:\n{ex.Message}");
+                BankSystemApp.Alerts.MsgError($"Ошибка при подключении по строке:\n{ex.Message}");
             }
         }
 
