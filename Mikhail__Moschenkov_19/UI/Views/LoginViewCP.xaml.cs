@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace BankSystemApp
+namespace BankSystemApp.UI.Views
 {
     /// <summary>
-    /// Логика взаимодействия для UserControl.xaml
+    /// Логика взаимодействия для LoginViewCP.xaml
     /// </summary>
-    public partial class UserControlDis : UserControl
+    public partial class LoginViewCP : UserControl
     {
-        public UserControlDis()
+        public LoginViewCP()
         {
             InitializeComponent();
         }

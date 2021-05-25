@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="BankSystemApp.UI.Views.LoginViewCP"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BankSystemApp.UI.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Border BorderBrush="Black" BorderThickness="1" Margin="1.383,10,10,10" Grid.ColumnSpan="2" Grid.Column="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="61*"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Margin="5" Text="Connection String" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <TextBox x:Name="tb_ConnectionStr" Grid.ColumnSpan="1" Margin="5,25,5,5" Text="{Binding StrConnection}" VerticalAlignment="Top"/>
+                <Button x:Name="btn_connect" Margin="5,25,5,5" Grid.Column="1" Content="Connect" Command="{Binding btn_connect}" IsEnabled="True" VerticalAlignment="Top"/>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

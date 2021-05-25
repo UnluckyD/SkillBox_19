@@ -12,7 +12,7 @@ using System.Diagnostics;
 
 namespace BankSystemApp.UI.Views
 {
-    class ViewModelClass : BindableBase
+    public class ViewModelClass : BindableBase
     {
         public Classes.Model model { get; set; } = new Classes.Model();
         ClientsDB client;

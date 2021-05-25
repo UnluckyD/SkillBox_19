@@ -147,14 +147,13 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Classes\Alerts.cs" />
+    <Compile Include="UI\Views\LoginViewCP.xaml.cs">
+      <DependentUpon>LoginViewCP.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\Views\LoginViewModel.cs" />
     <Compile Include="UI\Views\ViewModelCE.cs" />
     <Compile Include="UI\Views\ViewModelCreator.cs" />
     <Compile Include="IView.cs" />
-    <Compile Include="UI\Views\LoginView.cs" />
-    <Compile Include="UserControl.xaml.cs">
-      <DependentUpon>UserControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Windows\AddWindow.xaml.cs">
       <DependentUpon>AddWindow.xaml</DependentUpon>
     </Compile>
@@ -174,7 +173,7 @@
     </Compile>
     <Compile Include="UI\Views\ViewModelCC.cs" />
     <Compile Include="UI\Views\ViewModelClass.cs" />
-    <Page Include="UserControl.xaml">
+    <Page Include="UI\Views\LoginViewCP.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -10,7 +10,6 @@
     <Window.DataContext>
         <local:ViewModelClass x:Name="VM"/>
     </Window.DataContext>
-
     <Grid Background="LightGray">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="120"/>
@@ -20,70 +19,53 @@
             <RowDefinition Height="55"/>
             <RowDefinition Height="328*"/>
         </Grid.RowDefinitions>
-        <Border BorderBrush="Black" BorderThickness="1" Margin="1.383,10,10,10" Grid.ColumnSpan="2" Grid.Column="1">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="61*"/>
-                    <ColumnDefinition Width="100"/>
-                </Grid.ColumnDefinitions>
-                <TextBox x:Name="tb_ConnectionStr" Grid.ColumnSpan="1" Margin="5,5,5,5" Text="{Binding StrConnection}"/>
-                <Button x:Name="btn_connect" Margin="5,5,5,5" Grid.Column="1" Content="Connect" Command="{Binding btn_connect}" IsEnabled="True"/>
-            </Grid>
-        </Border>
         <ContentControl 
             Grid.Row="1" 
             Grid.Column="1"
             Content="{Binding CurrentViewModel}">
             <ContentControl.Resources>
                 <DataTemplate DataType="{x:Type local:LoginViewModel}">
-                    <local:LoginView/>
+                    <local:LoginViewCP/>
                 </DataTemplate>
             </ContentControl.Resources>
         </ContentControl>
         <TextBlock HorizontalAlignment="Left" Margin="10" TextWrapping="Wrap" Text="SkillBox" VerticalAlignment="Top" FontSize="26" Foreground="Gray" FontWeight="Bold"/>
-        
         <Button Grid.Row="1" Margin="10,10,0,0" Height="35" VerticalAlignment="Top" Width="100" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}">
             <StackPanel HorizontalAlignment="Left" Margin="0" Width="100" Orientation="Horizontal">
                 <fa:IconBlock Margin="1,2,0,0" Width="30" Padding="3" Icon="Home" FontSize="18" Foreground="DarkGray" HorizontalAlignment="Left"/>
                 <TextBlock Margin="0,10,0,0" Height="32" Text="Home" HorizontalAlignment="Left" Width="42" VerticalAlignment="Top"/>
             </StackPanel>
         </Button>
-        
         <Button Grid.Row="1" Margin="10,55,0,0" Height="35" VerticalAlignment="Top" Width="100" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}">
             <StackPanel HorizontalAlignment="Left" Margin="0" Width="100" Orientation="Horizontal">
                 <fa:IconBlock Margin="1,2,0,0" Width="30" Padding="3" Icon="Users" FontSize="18" Foreground="DarkGray" HorizontalAlignment="Left"/>
                 <TextBlock Margin="0,10,0,0" Height="32" Text="Клиенты" HorizontalAlignment="Left" Width="50" VerticalAlignment="Top"/>
             </StackPanel>
         </Button>
-
         <Button Grid.Row="1" Margin="10,100,0,0" Height="35" VerticalAlignment="Top" Width="100" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}">
             <StackPanel HorizontalAlignment="Left" Margin="0" Width="100" Orientation="Horizontal">
                 <fa:IconBlock Margin="1,2,0,0" Width="30" Padding="3" Icon="DollarSign" FontSize="18" Foreground="DarkGray" HorizontalAlignment="Left"/>
                 <TextBlock Margin="0,10,0,0" Height="32" Text="Счёт" HorizontalAlignment="Left" Width="42" VerticalAlignment="Top"/>
             </StackPanel>
         </Button>
-
         <Button Grid.Row="1" Margin="10,145,0,0" Height="35" VerticalAlignment="Top" Width="100" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}">
             <StackPanel HorizontalAlignment="Left" Margin="0" Width="100" Orientation="Horizontal">
                 <fa:IconBlock Margin="1,2,0,0" Width="30" Padding="3" Icon="University" FontSize="18" Foreground="DarkGray" HorizontalAlignment="Left"/>
                 <TextBlock Margin="0,10,0,0" Height="32" Text="Кредит" HorizontalAlignment="Left" Width="42" VerticalAlignment="Top"/>
             </StackPanel>
         </Button>
-
         <Button Grid.Row="1" Margin="10,190,0,0" Height="35" VerticalAlignment="Top" Width="100" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}">
             <StackPanel HorizontalAlignment="Left" Margin="0" Width="100" Orientation="Horizontal">
                 <fa:IconBlock Margin="1,2,0,0" Width="30" Padding="3" Icon="PiggyBank" FontSize="18" Foreground="DarkGray" HorizontalAlignment="Left"/>
                 <TextBlock Margin="0,10,0,0" Height="32" Text="Вклад" HorizontalAlignment="Left" Width="42" VerticalAlignment="Top"/>
             </StackPanel>
         </Button>
-        
         <Button Grid.Row="1" Margin="10,235,0,0" Height="35" VerticalAlignment="Top" Width="100" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}">
             <StackPanel HorizontalAlignment="Left" Margin="0" Width="100" Orientation="Horizontal">
                 <fa:IconBlock Margin="1,2,0,0" Width="30" Padding="3" Icon="Sun" FontSize="18" Foreground="DarkGray" HorizontalAlignment="Left"/>
                 <TextBlock Margin="0,10,0,0" Height="32" Text="Настройки" HorizontalAlignment="Left" Width="60" VerticalAlignment="Top"/>
             </StackPanel>
         </Button>
-
         <Button Grid.Row="1" Margin="10,0,0,10" Height="35" VerticalAlignment="Bottom" Width="100" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}" Command="{Binding GitHub_btn_click}">
             <StackPanel HorizontalAlignment="Left" Margin="0" Width="100" Orientation="Horizontal">
                 <fa:IconBlock Margin="1,2,0,0" Width="30" Padding="3" Icon="Github" FontSize="18" Foreground="DarkGray" HorizontalAlignment="Left"/>
