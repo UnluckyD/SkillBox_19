@@ -18,7 +18,7 @@ namespace BankSystemApp.UI.Views
     /// <summary>
     /// Логика взаимодействия для LoginViewCP.xaml
     /// </summary>
-    public partial class LoginViewCP : UserControl
+    public partial class LoginViewCP : UserControl, IView
     {
         public LoginViewCP()
         {

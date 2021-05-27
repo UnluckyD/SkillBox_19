@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BankSystemApp
 {
-    interface IView
+    public interface IView
     {
 
     }

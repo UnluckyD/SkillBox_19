@@ -9,3 +9,15 @@ C:\Users\User\source\repos\Mikhail__Moschenkov_19\SkillBox_19\BankSystem.DataAcc
 C:\Users\User\source\repos\Mikhail__Moschenkov_19\SkillBox_19\BankSystem.DataAccess\obj\Debug\BankSystemApp.DataAccess.csproj.CopyComplete
 C:\Users\User\source\repos\Mikhail__Moschenkov_19\SkillBox_19\BankSystem.DataAccess\obj\Debug\BankSystem.DataAccess.dll
 C:\Users\User\source\repos\Mikhail__Moschenkov_19\SkillBox_19\BankSystem.DataAccess\obj\Debug\BankSystem.DataAccess.pdb
+C:\Users\User\Source\Repos\SkillBox_19\BankSystem.DataAccess\bin\Debug\BankSystem.DataAccess.dll.config
+C:\Users\User\Source\Repos\SkillBox_19\BankSystem.DataAccess\bin\Debug\BankSystem.DataAccess.dll
+C:\Users\User\Source\Repos\SkillBox_19\BankSystem.DataAccess\bin\Debug\BankSystem.DataAccess.pdb
+C:\Users\User\Source\Repos\SkillBox_19\BankSystem.DataAccess\bin\Debug\EntityFramework.dll
+C:\Users\User\Source\Repos\SkillBox_19\BankSystem.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\User\Source\Repos\SkillBox_19\BankSystem.DataAccess\bin\Debug\EntityFramework.xml
+C:\Users\User\Source\Repos\SkillBox_19\BankSystem.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\User\Source\Repos\SkillBox_19\BankSystem.DataAccess\obj\Debug\BankSystemApp.DataAccess.csprojAssemblyReference.cache
+C:\Users\User\Source\Repos\SkillBox_19\BankSystem.DataAccess\obj\Debug\BankSystemApp.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\User\Source\Repos\SkillBox_19\BankSystem.DataAccess\obj\Debug\BankSystemApp.DataAccess.csproj.CopyComplete
+C:\Users\User\Source\Repos\SkillBox_19\BankSystem.DataAccess\obj\Debug\BankSystem.DataAccess.dll
+C:\Users\User\Source\Repos\SkillBox_19\BankSystem.DataAccess\obj\Debug\BankSystem.DataAccess.pdb

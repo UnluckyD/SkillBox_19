@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using BankSystemApp.DataAccess;
 using System.Windows.Input;
 using System.Diagnostics;
+using System.Windows.Media;
 
 namespace BankSystemApp.UI.Views
 {
@@ -16,7 +17,8 @@ namespace BankSystemApp.UI.Views
     {
         public Classes.Model model { get; set; } = new Classes.Model();
         ClientsDB client;
-        public BindableBase CurrentViewModel { get; set; }
+        public IView CurrentViewModel { get; set; } = new LoginViewCP();
+        public Brush brush { get; set; } = new SolidColorBrush(Color.FromArgb(255, 157, 218, 252));
 
         string strConnection = string.Empty;
         public string StrConnection { get => strConnection; set => strConnection = value; }
