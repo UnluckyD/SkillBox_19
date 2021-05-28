@@ -176,3 +176,5 @@ C:\Users\User\Source\Repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\BankSyst
 C:\Users\User\Source\Repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\BankSystemApp.csproj.CopyComplete
 C:\Users\User\Source\Repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\BankSystemApp.exe
 C:\Users\User\Source\Repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\BankSystemApp.pdb
+C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\UI\Views\ClientsViewModel.g.cs
+C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\UI\Views\ClientsViewModel.baml

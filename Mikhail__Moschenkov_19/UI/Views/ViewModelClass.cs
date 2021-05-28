@@ -15,22 +15,12 @@ namespace BankSystemApp.UI.Views
 {
     public class ViewModelClass : BindableBase
     {
-        public Classes.Model model { get; set; } = new Classes.Model();
+        public Classes.Model model { get; set; } = Classes.StaticModel.model;
         ClientsDB client;
-        public IView CurrentViewModel { get; set; } = new LoginViewCP();
-        public Brush brush { get; set; } = new SolidColorBrush(Color.FromArgb(255, 157, 218, 252));
-
-        string strConnection = string.Empty;
-        public string StrConnection { get => strConnection; set => strConnection = value; }
 
         public ClientsDB TransferClient { get; set; }
         public ClientsDB Client { get { return client; } set { client = value; RaisePropertyChanged("Client"); } }
         public decimal TransferAmount { get; set; }
-
-        public ICommand btn_connect { 
-            get { return new CommandHandler(() => model.Connection(strConnection), () => model.CanExecute);
-            }
-        }
 
         public ICommand Add_window {
             get { return new CommandHandler(() => model.OpenAddWindow(), () => model.CanExecute); }
@@ -61,11 +51,6 @@ namespace BankSystemApp.UI.Views
         public ICommand Transfer_btn_click
         {
             get { return new CommandHandler(() => model.transfer_btn_click(TransferClient,Client, TransferAmount), () => model.CanExecute); }
-        }
-
-        public ICommand GitHub_btn_click
-        {
-            get { return new CommandHandler(() => Process.Start("https://github.com/UnluckyD/SkillBox_19"), () => model.CanExecute); }
         }
     }
 }
