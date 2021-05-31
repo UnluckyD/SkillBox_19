@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\App.xaml
-81022532078
+9-1682002058
 
-23-1536260054
+26-1553951186
 149-1440591384
-UI\Views\ClientsViewModel.xaml;UI\Views\LoginViewCP.xaml;Windows\AddWindow.xaml;Windows\ClientEditorWindow.xaml;Windows\ContributionWindow.xaml;Windows\CreditMenu.xaml;MainWindow.xaml;Windows\TransferWindow.xaml;
+UI\Views\ClientsViewModel.xaml;UI\Views\LoginViewCP.xaml;UI\Views\SettingsView.xaml;Windows\AddWindow.xaml;Windows\ClientEditorWindow.xaml;Windows\ContributionWindow.xaml;Windows\CreditMenu.xaml;MainWindow.xaml;Windows\TransferWindow.xaml;
 
 False
 

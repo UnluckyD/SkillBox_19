@@ -148,6 +148,7 @@
     </ApplicationDefinition>
     <Compile Include="Classes\Alerts.cs" />
     <Compile Include="Classes\StaticModel.cs" />
+    <Compile Include="UI\DarkModLogic\DarkMod.cs" />
     <Compile Include="UI\Views\ClientsViewModel.xaml.cs">
       <DependentUpon>ClientsViewModel.xaml</DependentUpon>
     </Compile>
@@ -156,6 +157,10 @@
     </Compile>
     <Compile Include="UI\Views\LoginViewModel.cs" />
     <Compile Include="UI\Views\MainViewModel.cs" />
+    <Compile Include="UI\Views\SettingsView.xaml.cs">
+      <DependentUpon>SettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\SettingsViewModel.cs" />
     <Compile Include="UI\Views\ViewModelCE.cs" />
     <Compile Include="UI\Views\ViewModelCreator.cs" />
     <Compile Include="IView.cs" />
@@ -179,10 +184,14 @@
     <Compile Include="UI\Views\ViewModelCC.cs" />
     <Compile Include="UI\Views\ViewModelClass.cs" />
     <Page Include="UI\Views\ClientsViewModel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Views\LoginViewCP.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UI\Views\LoginViewCP.xaml">
+    <Page Include="UI\Views\SettingsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

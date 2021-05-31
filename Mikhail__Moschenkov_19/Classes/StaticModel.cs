@@ -9,5 +9,6 @@ namespace BankSystemApp.Classes
     public static class StaticModel
     {
         public static Model model = new Model();
+        public static UI.DarkModLogic.DarkMod DM = new UI.DarkModLogic.DarkMod();
     }
 }

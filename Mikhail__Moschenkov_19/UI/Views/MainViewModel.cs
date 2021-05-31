@@ -12,10 +12,11 @@ namespace BankSystemApp.UI.Views
 {
     class MainViewModel : BindableBase
     {
-        public Brush brushLight { get; set; } = new SolidColorBrush(Color.FromArgb(255, 157, 218, 252));
-        public Brush brushDark { get; set; } = new SolidColorBrush(Color.FromArgb(255, 16, 44, 84));
+        public UI.DarkModLogic.DarkMod darkMod { get; set; } = Classes.StaticModel.DM;
+
         LoginViewCP loginView = new LoginViewCP();
         ClientsViewModel clientsVM = new ClientsViewModel();
+        SettingsView settingsView = new SettingsView();
 
         IView currentViewModel;
         public IView CurrentViewModel { get { return currentViewModel; } set { currentViewModel = value; RaisePropertyChanged("CurrentViewModel"); } }
@@ -33,6 +34,11 @@ namespace BankSystemApp.UI.Views
         public ICommand Clients_btn_click
         {
             get { return new CommandHandler(() => CurrentViewModel = clientsVM, () => Classes.StaticModel.model.CanExecute); }
+        }
+
+        public ICommand Settings_btn_click
+        {
+            get { return new CommandHandler(() => CurrentViewModel = settingsView, () => Classes.StaticModel.model.CanExecute); }
         }
     }
 }
