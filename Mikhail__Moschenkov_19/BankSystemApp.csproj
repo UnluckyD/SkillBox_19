@@ -148,6 +148,7 @@
     </ApplicationDefinition>
     <Compile Include="Classes\Alerts.cs" />
     <Compile Include="Classes\StaticModel.cs" />
+    <Compile Include="Classes\WindowDragHandler.cs" />
     <Compile Include="UI\DarkModLogic\DarkMod.cs" />
     <Compile Include="UI\Views\ClientsViewModel.xaml.cs">
       <DependentUpon>ClientsViewModel.xaml</DependentUpon>
@@ -263,9 +264,6 @@
       <Project>{97a0f1ad-5771-493f-851e-10bd2b7e1e14}</Project>
       <Name>BankSystemApp.DataAccess</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="1680_1050_20100502020808424882.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

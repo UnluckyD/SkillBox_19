@@ -40,5 +40,15 @@ namespace BankSystemApp.UI.Views
         {
             get { return new CommandHandler(() => CurrentViewModel = settingsView, () => Classes.StaticModel.model.CanExecute); }
         }
+
+        public ICommand CloseApp_btn_click
+        {
+            get { return new CommandHandler(() => System.Windows.Application.Current.Shutdown(), () => Classes.StaticModel.model.CanExecute); }
+        }
+
+        public ICommand MinimazeApp_btn_click
+        {
+            get { return new CommandHandler(() => System.Windows.Application.Current.MainWindow.WindowState = System.Windows.WindowState.Minimized, () => Classes.StaticModel.model.CanExecute); }
+        }
     }
 }
