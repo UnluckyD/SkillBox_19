@@ -139,15 +139,17 @@ namespace BankSystemApp.Classes
         }
         public void AddClient(ClientsDB client)
         {
-            try
+            if (repositoryClients != null && client != null)
             {
-                if (repositoryClients != null)
+                try
+                {
                     repositoryClients.Create(client);
-                repositoryClients.Save();
-            }
-            catch (Exception ex)
-            {
-                Alerts.MsgError(ex.Message);
+                    repositoryClients.Save();
+                }
+                catch (Exception ex)
+                {
+                    Alerts.MsgError(ex.Message);
+                }
             }
         }
 
@@ -160,7 +162,7 @@ namespace BankSystemApp.Classes
 
                 try
                 {
-                    if (edit.DialogResult.Value)
+                    if (edit.DialogResult.Value || !edit.DialogResult.Value)
                     {
                         repositoryClients.Update(row);
                         repositoryClients.Save();
