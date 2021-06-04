@@ -139,17 +139,22 @@ namespace BankSystemApp.Classes
         }
         public void AddClient(ClientsDB client)
         {
-            if (repositoryClients != null && client != null)
+            if (repositoryClients != null)
             {
                 try
                 {
-                    repositoryClients.Create(client);
+                    if (client != null)
+                        repositoryClients.Create(client);
                     repositoryClients.Save();
                 }
                 catch (Exception ex)
                 {
                     Alerts.MsgError(ex.Message);
                 }
+            }
+            else
+            {
+                Alerts.MsgWarning($"Не подключен репозиторий клиентов.");
             }
         }
 
