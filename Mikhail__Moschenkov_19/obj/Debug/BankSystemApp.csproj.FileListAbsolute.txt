@@ -180,3 +180,5 @@ C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\UI\Views
 C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\UI\Views\ClientsViewModel.baml
 C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\UI\Views\SettingsView.g.cs
 C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\UI\Views\SettingsView.baml
+C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\UI\Views\HomePage.g.cs
+C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\UI\Views\HomePage.baml

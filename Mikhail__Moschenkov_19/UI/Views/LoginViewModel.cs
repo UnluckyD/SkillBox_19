@@ -19,7 +19,25 @@ namespace BankSystemApp.UI.Views
         {
             get
             {
-                return new CommandHandler(() => Classes.StaticModel.model.Connection(strConnection), () => Classes.StaticModel.model.CanExecute);
+                return new CommandHandler(() => {
+                    Classes.StaticModel.model.Connection(strConnection);
+
+                    if (Classes.StaticModel.model.CanExecute)
+                        Classes.StaticModel.Connection.IsConnected = true;
+                    else
+                        Classes.StaticModel.Connection.IsConnected = false;
+                }, () => Classes.StaticModel.model.CanExecute);
+            }
+        }
+
+        public ICommand btn_disconnect
+        {
+            get
+            {
+                return new CommandHandler(() => {
+                    Classes.StaticModel.model.Disconnect();
+                    Classes.StaticModel.Connection.IsConnected = false;
+                }, () => Classes.StaticModel.model.CanExecute);
             }
         }
     }

@@ -13,12 +13,14 @@ namespace BankSystemApp.UI.Views
     class MainViewModel : BindableBase
     {
         public UI.DarkModLogic.DarkMod darkMod { get; set; } = Classes.StaticModel.DM;
+        public Classes.Connection connection { get; set; } = Classes.StaticModel.Connection;
 
         LoginViewCP loginView = new LoginViewCP();
         ClientsViewModel clientsVM = new ClientsViewModel();
         SettingsView settingsView = new SettingsView();
+        static HomePage homePage = new HomePage();
 
-        IView currentViewModel;
+        IView currentViewModel = homePage;
         public IView CurrentViewModel { get { return currentViewModel; } set { currentViewModel = value; RaisePropertyChanged("CurrentViewModel"); } }
 
         public ICommand GitHub_btn_click
@@ -29,6 +31,11 @@ namespace BankSystemApp.UI.Views
         public ICommand Login_btn_click
         {
             get { return new CommandHandler(() => CurrentViewModel = loginView, () => Classes.StaticModel.model.CanExecute); }
+        }
+
+        public ICommand Home_btn_click
+        {
+            get { return new CommandHandler(() => CurrentViewModel = homePage, () => Classes.StaticModel.model.CanExecute); }
         }
 
         public ICommand Clients_btn_click

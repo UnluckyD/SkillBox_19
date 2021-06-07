@@ -147,12 +147,17 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Classes\Alerts.cs" />
+    <Compile Include="Classes\Connection.cs" />
     <Compile Include="Classes\StaticModel.cs" />
     <Compile Include="Classes\WindowDragHandler.cs" />
     <Compile Include="UI\DarkModLogic\DarkMod.cs" />
     <Compile Include="UI\Views\ClientsViewModel.xaml.cs">
       <DependentUpon>ClientsViewModel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\Views\HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\HomePageViewModel.cs" />
     <Compile Include="UI\Views\LoginViewCP.xaml.cs">
       <DependentUpon>LoginViewCP.xaml</DependentUpon>
     </Compile>
@@ -187,6 +192,10 @@
     <Page Include="UI\Views\ClientsViewModel.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Views\HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UI\Views\LoginViewCP.xaml">
       <SubType>Designer</SubType>

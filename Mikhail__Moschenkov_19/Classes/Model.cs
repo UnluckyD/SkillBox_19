@@ -132,6 +132,14 @@ namespace BankSystemApp.Classes
                 Connect();
         }
 
+        public void Disconnect()
+        {
+            if (bankSystem != null)
+            {
+                bankSystem = null;
+            }
+        }
+
         public void OpenAddWindow()
         {
             AddWindow add = new AddWindow(this);
@@ -285,7 +293,14 @@ namespace BankSystemApp.Classes
             }
         }
 
-
+        public string GetConnectionInfo()
+        {
+            if (bankSystem != null)
+                return $"Строка подключения: '{bankSystem.Database.Connection.ConnectionString}'" +
+                    $"\n\nИмя сервера: '{bankSystem.Database.Connection.DataSource}'";
+            else
+                return "Соединение не установленно.";
+        }
         public void returnChanges(ClientsDB copy, ClientsDB client)
         {
             client.account = copy.account;
