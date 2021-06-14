@@ -151,6 +151,10 @@
     <Compile Include="Classes\StaticModel.cs" />
     <Compile Include="Classes\WindowDragHandler.cs" />
     <Compile Include="UI\DarkModLogic\DarkMod.cs" />
+    <Compile Include="UI\Views\AllreadyLog.xaml.cs">
+      <DependentUpon>AllreadyLog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\AllreadyLogViewModel.cs" />
     <Compile Include="UI\Views\Authorization\LogIn.xaml.cs">
       <DependentUpon>LogIn.xaml</DependentUpon>
     </Compile>
@@ -197,6 +201,10 @@
     </Compile>
     <Compile Include="UI\Views\ViewModelCC.cs" />
     <Compile Include="UI\Views\ViewModelClass.cs" />
+    <Page Include="UI\Views\AllreadyLog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UI\Views\Authorization\LogIn.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

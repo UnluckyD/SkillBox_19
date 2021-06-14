@@ -10,9 +10,18 @@ namespace BankSystemApp.Classes
 {
     public class Connection : BindableBase
     {
-        Authorization user = new Authorization() { 
+        Authorization user = new Authorization()
+        {
             Login = "guest"
         };
+
+        public Authorization User { get { return user; } 
+            private set { user = value; 
+                RaisePropertyChanged("User");
+                RaisePropertyChanged("ConnectionInfo");
+                RaisePropertyChanged("ConnectionFullInfo");
+            } } 
+
         bool isConnected = false;
         public bool IsConnected { get { return isConnected; } set { isConnected = value; 
                 RaisePropertyChanged("IsConnected"); 
@@ -22,17 +31,18 @@ namespace BankSystemApp.Classes
         public string Status { get { return IsConnected ? "Logout" : "Login"; } }
 
         public string ConnectionInfo { get { return StaticModel.model.GetConnectionInfo(user); } }
+        public string ConnectionFullInfo { get { return StaticModel.model.GetConnectionFullInfo(user); } }
 
-        public int PermissionLvl { get { return user.Permission; } }
+        public int PermissionLvl { get { return User.Permission; } }
 
         public bool Authorization(string login, string pass)
         {
             try
             {
-                var User = Classes.StaticModel.model.Authorization.FirstOrDefault(u => u.Login.Trim(' ') == login && u.Password.Trim(' ') == pass);
-                if (User != null)
+                var _User = Classes.StaticModel.model.Authorization.FirstOrDefault(u => u.Login.Trim(' ') == login && u.Password.Trim(' ') == pass);
+                if (_User != null)
                 {
-                    user = User;
+                    User = _User;
                     return true;
                 }
                 else {
@@ -42,6 +52,29 @@ namespace BankSystemApp.Classes
             }catch (Exception ex)
             {
                 Alerts.MsgError($"Не удалось авторизироваться.\nCode:\n{ex}");
+                return false;
+            }
+        }
+
+        public bool LogOut()
+        {
+            try
+            {
+                var NewUser = new Authorization()
+                {
+                    Login = "guest"
+                };
+                if (NewUser == User)
+                    return false;
+                else
+                {
+                    User = NewUser;
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Alerts.MsgError(ex.Message);
                 return false;
             }
         }

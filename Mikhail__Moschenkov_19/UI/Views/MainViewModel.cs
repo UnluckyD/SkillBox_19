@@ -15,7 +15,6 @@ namespace BankSystemApp.UI.Views
         public UI.DarkModLogic.DarkMod darkMod { get; set; } = Classes.StaticModel.DM;
         public Classes.Connection connection { get; set; } = Classes.StaticModel.Connection;
 
-        LoginViewCP loginView = new LoginViewCP();
         ClientsViewModel clientsVM = new ClientsViewModel();
         SettingsView settingsView = new SettingsView();
         static HomePage homePage = new HomePage();
@@ -30,7 +29,7 @@ namespace BankSystemApp.UI.Views
 
         public ICommand Login_btn_click
         {
-            get { return new CommandHandler(() => CurrentViewModel = loginView, () => Classes.StaticModel.model.CanExecute); }
+            get { return new CommandHandler(() => CurrentViewModel = Classes.StaticModel.View, () => Classes.StaticModel.model.CanExecute); }
         }
 
         public ICommand Home_btn_click

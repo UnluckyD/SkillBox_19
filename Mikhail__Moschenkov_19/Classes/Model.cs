@@ -338,6 +338,12 @@ namespace BankSystemApp.Classes
             else
                 return "БД не подключена.";
         }
+
+        public string GetConnectionFullInfo(Authorization user)
+        {
+            return $"Login: {user.Login}\nID: {user.Id}\nOAuth: {user.OAuth}\nPermission: {user.Permission}";
+        }
+
         public void returnChanges(ClientsDB copy, ClientsDB client)
         {
             client.account = copy.account;
