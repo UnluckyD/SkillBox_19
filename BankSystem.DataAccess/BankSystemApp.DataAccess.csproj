@@ -53,6 +53,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Alerts.cs" />
+    <Compile Include="Authorization.cs">
+      <DependentUpon>ModelDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="BankValues.cs" />
     <Compile Include="ClientsDB.cs">
       <DependentUpon>ModelDB.tt</DependentUpon>
@@ -80,6 +83,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQLAuthorization.cs" />
     <Compile Include="SQLClientRepository.cs" />
     <Compile Include="SQLContributionRepository.cs" />
     <Compile Include="SQLCreditRepository.cs" />
@@ -108,6 +112,9 @@
       <DependentUpon>ModelDB.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

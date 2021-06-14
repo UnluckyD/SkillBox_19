@@ -1,6 +1,6 @@
-﻿using System.Linq;
+﻿using BankSystemApp.DataAccess;
+using System.Linq;
 using System.Windows;
-using BankSystemApp.DataAccess;
 
 namespace BankSystemApp
 {

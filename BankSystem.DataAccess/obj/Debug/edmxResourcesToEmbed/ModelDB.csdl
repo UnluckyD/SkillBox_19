@@ -26,8 +26,8 @@
     <Property Name="dateBegin" Type="DateTime" Precision="0" />
     <Property Name="dateEnd" Type="DateTime" Precision="0" />
     <Property Name="dateLast" Type="DateTime" Precision="0" />
-    <Property Name="capitalization" Type="Boolean" />
-    <Property Name="contribut" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="capitalization" Type="Boolean" Nullable="false" />
+    <Property Name="contribut" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
   </EntityType>
   <EntityType Name="Credit">
     <Key>
@@ -37,12 +37,23 @@
     <Property Name="dateBegin" Type="DateTime" Precision="0" />
     <Property Name="dateEnd" Type="DateTime" Precision="0" />
     <Property Name="dateLast" Type="DateTime" Precision="0" />
-    <Property Name="amount" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="monthly" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="amount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="monthly" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
   </EntityType>
   <EntityContainer Name="BankSystemEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="ClientsDB" EntityType="Self.ClientsDB" />
     <EntitySet Name="Contribution" EntityType="Self.Contribution" />
     <EntitySet Name="Credit" EntityType="Self.Credit" />
+    <EntitySet Name="Authorization" EntityType="BankSystemModel.Authorization" />
   </EntityContainer>
+  <EntityType Name="Authorization">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Login" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Permission" Type="Int32" Nullable="false" />
+    <Property Name="OAuth" Type="String" Nullable="false" MaxLength="26" FixedLength="true" Unicode="true" />
+  </EntityType>
 </Schema>

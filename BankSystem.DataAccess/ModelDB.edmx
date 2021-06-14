@@ -4,7 +4,17 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище BankSystemModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище BankSystemModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Authorization">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Login" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="Password" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="Permission" Type="int" Nullable="false" />
+          <Property Name="OAuth" Type="nchar" MaxLength="26" Nullable="false" />
+        </EntityType>
         <EntityType Name="ClientsDB">
           <Key>
             <PropertyRef Name="Id" />
@@ -31,8 +41,8 @@
           <Property Name="dateBegin" Type="date" />
           <Property Name="dateEnd" Type="date" />
           <Property Name="dateLast" Type="date" />
-          <Property Name="capitalization" Type="bit" />
-          <Property Name="contribut" Type="money" />
+          <Property Name="capitalization" Type="bit" Nullable="false" />
+          <Property Name="contribut" Type="money" Nullable="false" />
         </EntityType>
         <EntityType Name="Credit">
           <Key>
@@ -42,16 +52,16 @@
           <Property Name="dateBegin" Type="date" />
           <Property Name="dateEnd" Type="date" />
           <Property Name="dateLast" Type="date" />
-          <Property Name="amount" Type="money" />
-          <Property Name="monthly" Type="money" />
+          <Property Name="amount" Type="money" Nullable="false" />
+          <Property Name="monthly" Type="money" Nullable="false" />
         </EntityType>
         <EntityContainer Name="Хранилище BankSystemModelContainer">
+          <EntitySet Name="Authorization" EntityType="Self.Authorization" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ClientsDB" EntityType="Self.ClientsDB" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Contribution" EntityType="Self.Contribution" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Credit" EntityType="Self.Credit" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BankSystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -81,8 +91,8 @@
           <Property Name="dateBegin" Type="DateTime" Precision="0" />
           <Property Name="dateEnd" Type="DateTime" Precision="0" />
           <Property Name="dateLast" Type="DateTime" Precision="0" />
-          <Property Name="capitalization" Type="Boolean" />
-          <Property Name="contribut" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="capitalization" Type="Boolean" Nullable="false" />
+          <Property Name="contribut" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
         </EntityType>
         <EntityType Name="Credit">
           <Key>
@@ -92,14 +102,25 @@
           <Property Name="dateBegin" Type="DateTime" Precision="0" />
           <Property Name="dateEnd" Type="DateTime" Precision="0" />
           <Property Name="dateLast" Type="DateTime" Precision="0" />
-          <Property Name="amount" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="monthly" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="amount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="monthly" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
         </EntityType>
         <EntityContainer Name="BankSystemEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ClientsDB" EntityType="Self.ClientsDB" />
           <EntitySet Name="Contribution" EntityType="Self.Contribution" />
           <EntitySet Name="Credit" EntityType="Self.Credit" />
+          <EntitySet Name="Authorization" EntityType="BankSystemModel.Authorization" />
         </EntityContainer>
+        <EntityType Name="Authorization">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Login" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Permission" Type="Int32" Nullable="false" />
+          <Property Name="OAuth" Type="String" Nullable="false" MaxLength="26" FixedLength="true" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -146,6 +167,17 @@
                 <ScalarProperty Name="dateLast" ColumnName="dateLast" />
                 <ScalarProperty Name="amount" ColumnName="amount" />
                 <ScalarProperty Name="monthly" ColumnName="monthly" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Authorization">
+            <EntityTypeMapping TypeName="BankSystemModel.Authorization">
+              <MappingFragment StoreEntitySet="Authorization">
+                <ScalarProperty Name="OAuth" ColumnName="OAuth" />
+                <ScalarProperty Name="Permission" ColumnName="Permission" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

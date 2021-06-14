@@ -40,7 +40,12 @@ namespace BankSystemApp.UI.Views
 
         public ICommand Clients_btn_click
         {
-            get { return new CommandHandler(() => CurrentViewModel = clientsVM, () => Classes.StaticModel.model.CanExecute); }
+            get { return new CommandHandler(() => {
+                if (Classes.StaticModel.Connection.PermissionLvl >= 3)
+                    CurrentViewModel = clientsVM;
+                else
+                    Alerts.MsgWarning($"Выш уровень допуска недостаточный.\nВаш: {Classes.StaticModel.Connection.PermissionLvl}");
+            }, () => Classes.StaticModel.model.CanExecute); }
         }
 
         public ICommand Settings_btn_click

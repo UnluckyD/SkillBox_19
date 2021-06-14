@@ -15,14 +15,17 @@ namespace BankSystemApp.Classes
         IRepository<ClientsDB> repositoryClients;
         IRepository<Credit> repositoryCredit;
         IRepository<Contribution> repositoryContribution;
+        IRepository<Authorization> repositoryAuthorization;
 
         IEnumerable<ClientsDB> clients;
         IEnumerable<Credit> credits;
         IEnumerable<Contribution> contributions;
+        IEnumerable<Authorization> authorization;
 
         public IEnumerable<ClientsDB> Clients { get { return clients; } set { clients = value; RaisePropertyChanged("Clients"); } }
         public IEnumerable<Credit> Credits { get { return credits; } set { credits = value; RaisePropertyChanged("Credits"); } }
         public IEnumerable<Contribution> Contributions { get { return contributions; } set { contributions = value; RaisePropertyChanged("Contributions"); } }
+        public IEnumerable<Authorization> Authorization { get { return authorization; } set { authorization = value; RaisePropertyChanged("Authorization"); } }
 
         public bool Transfer(ClientsDB client1, ClientsDB client2, decimal transfer)
         {
@@ -76,6 +79,7 @@ namespace BankSystemApp.Classes
                 repositoryClients = new SQLClientRepository(bankSystem);
                 repositoryCredit = new SQLCreditRepository(bankSystem);
                 repositoryContribution = new SQLContributionRepository(bankSystem);
+                repositoryAuthorization = new SQLAuthorization(bankSystem);
                 LoadDB();
             }catch (Exception ex)
             {
@@ -90,10 +94,12 @@ namespace BankSystemApp.Classes
                 repositoryClients.Load();
                 repositoryCredit.Load();
                 repositoryContribution.Load();
+                repositoryAuthorization.Load();
 
                 Clients = repositoryClients.GetDB();
                 Credits = repositoryCredit.GetDB();
                 Contributions = repositoryContribution.GetDB();
+                Authorization = repositoryAuthorization.GetDB();
             }
             catch(Exception ex)
             {
@@ -108,6 +114,7 @@ namespace BankSystemApp.Classes
                 repositoryClients = new SQLClientRepository(bankSystem);
                 repositoryCredit = new SQLCreditRepository(bankSystem);
                 repositoryContribution = new SQLContributionRepository(bankSystem);
+                repositoryAuthorization = new SQLAuthorization(bankSystem);
                 LoadDB();
             }
             catch (Exception ex)
@@ -145,6 +152,36 @@ namespace BankSystemApp.Classes
             AddWindow add = new AddWindow(this);
             add.ShowDialog();
         }
+
+        public void SingUpUser(string login, string password)
+        {
+            if (repositoryAuthorization != null)
+            {
+                try
+                {
+                    var firstUser = repositoryAuthorization.GetDB().FirstOrDefault(u => u.Login == login);
+                    if (login != "" && password.Length >= 5 && firstUser == null)
+                    {
+                        Authorization user = new Authorization()
+                        {
+                            Login = login,
+                            Password = password
+                        };
+                        repositoryAuthorization.Create(user);
+                        repositoryAuthorization.Save();
+                    }
+                    else if (login == "") Alerts.MsgWarning("Логин не может быть пустым.");
+                    else if (password.Length < 5) Alerts.MsgWarning("Пароль должен состоять хотя бы из 5 символов.");
+                    else if (firstUser != null) Alerts.MsgWarning("Данное имя пользователя уже используется.");
+                }
+                catch (Exception ex)
+                {
+                    Alerts.MsgError($"Регистрация не прошла!\nОшибка:\n{ex}");
+                }
+            }
+            else { Alerts.MsgWarning($"БД не подключена."); }
+        }
+
         public void AddClient(ClientsDB client)
         {
             if (repositoryClients != null)
@@ -238,7 +275,7 @@ namespace BankSystemApp.Classes
             {
                 try
                 {
-                    credit.Amount = creditSum;
+                    credit.amount = creditSum;
                     repositoryCredit.Create(credit);
 
                     client.creditID = credit.Id;
@@ -293,13 +330,13 @@ namespace BankSystemApp.Classes
             }
         }
 
-        public string GetConnectionInfo()
+        public string GetConnectionInfo(Authorization user)
         {
             if (bankSystem != null)
-                return $"Строка подключения: '{bankSystem.Database.Connection.ConnectionString}'" +
-                    $"\n\nИмя сервера: '{bankSystem.Database.Connection.DataSource}'";
+                return $"Пользователь: {user.Login.Trim(' ')}" +
+                    $"\nУровень доступа: {user.Permission}";
             else
-                return "Соединение не установленно.";
+                return "БД не подключена.";
         }
         public void returnChanges(ClientsDB copy, ClientsDB client)
         {

@@ -151,6 +151,14 @@
     <Compile Include="Classes\StaticModel.cs" />
     <Compile Include="Classes\WindowDragHandler.cs" />
     <Compile Include="UI\DarkModLogic\DarkMod.cs" />
+    <Compile Include="UI\Views\Authorization\LogIn.xaml.cs">
+      <DependentUpon>LogIn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\Authorization\LoginViewModel.cs" />
+    <Compile Include="UI\Views\Authorization\SingUp.xaml.cs">
+      <DependentUpon>SingUp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\Authorization\SingUpViewModel.cs" />
     <Compile Include="UI\Views\ClientsViewModel.xaml.cs">
       <DependentUpon>ClientsViewModel.xaml</DependentUpon>
     </Compile>
@@ -189,6 +197,14 @@
     </Compile>
     <Compile Include="UI\Views\ViewModelCC.cs" />
     <Compile Include="UI\Views\ViewModelClass.cs" />
+    <Page Include="UI\Views\Authorization\LogIn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Views\Authorization\SingUp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UI\Views\ClientsViewModel.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

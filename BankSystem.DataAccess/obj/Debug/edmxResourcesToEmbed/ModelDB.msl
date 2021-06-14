@@ -44,5 +44,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Authorization">
+      <EntityTypeMapping TypeName="BankSystemModel.Authorization">
+        <MappingFragment StoreEntitySet="Authorization">
+          <ScalarProperty Name="OAuth" ColumnName="OAuth" />
+          <ScalarProperty Name="Permission" ColumnName="Permission" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

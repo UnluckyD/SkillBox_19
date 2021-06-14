@@ -4,21 +4,37 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:BankSystemApp.UI.Views"
+             xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.DataContext>
         <local:LoginViewModel/>
     </UserControl.DataContext>
     <Grid>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="61*"/>
-                    <ColumnDefinition Width="100"/>
-                </Grid.ColumnDefinitions>
-                <TextBlock Margin="5" Text="Connection String" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{Binding darkMod.brushForeground}"/>
-                <TextBox x:Name="tb_ConnectionStr" Grid.ColumnSpan="1" Margin="5,25,5,5" Text="{Binding StrConnection}" VerticalAlignment="Top"/>
-                <Button x:Name="btn_connect" Margin="5,23,5,5" Grid.Column="1" Content="Connect" Command="{Binding btn_connect}" IsEnabled="True" VerticalAlignment="Top"/>
-                <Button x:Name="btn_disconnect" Margin="5,53,5,5" Grid.Column="1" Content="Disconnect" Command="{Binding btn_disconnect}" IsEnabled="True" VerticalAlignment="Top"/>
-        </Grid>
+        <ContentControl 
+            Grid.Row="2" 
+            Grid.Column="1"
+            Margin="1,1,1,50"
+            Content="{Binding CurrentViewModel}">
+            <ContentControl.Resources>
+                <DataTemplate DataType="{x:Type local:LoginViewModel}">
+                    <local:LoginViewCP/>
+                </DataTemplate>
+            </ContentControl.Resources>
+        </ContentControl>
+        <Button HorizontalAlignment="Right" Height="30" Width="90" Margin="0,0,5,1"
+                Background="{x:Null}" BorderBrush="{x:Null}" Command="{Binding LogIn_btn_click}" VerticalAlignment="Bottom">
+            <StackPanel Orientation="Horizontal">
+                <fa:IconBlock Margin="1,2,0,0" Width="30" Padding="3" Icon="Key" FontSize="18" Foreground="{Binding dMod.brushForeground}" HorizontalAlignment="Left"/>
+                <TextBlock Text="Sing-In" Foreground="{Binding dMod.brushForeground}" Margin="1,4"/>
+            </StackPanel>
+        </Button>
+        <Button HorizontalAlignment="Right" Height="30" Width="90" Margin="0,0,105,1"
+                Background="{x:Null}" BorderBrush="{x:Null}" Command="{Binding SingUp_btn_click}" VerticalAlignment="Bottom">
+            <StackPanel Orientation="Horizontal">
+                <fa:IconBlock Margin="1,2,0,0" Width="30" Padding="3" Icon="Sign" FontSize="18" Foreground="{Binding dMod.brushForeground}" HorizontalAlignment="Left"/>
+                <TextBlock Text="Sing-Up" Foreground="{Binding dMod.brushForeground}" Margin="1,4"/>
+            </StackPanel>
+        </Button>
     </Grid>
 </UserControl>

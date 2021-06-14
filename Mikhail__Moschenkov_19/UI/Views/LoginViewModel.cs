@@ -11,34 +11,31 @@ namespace BankSystemApp.UI.Views
 {
     class LoginViewModel : BindableBase
     {
-        string strConnection = string.Empty;
-        public string StrConnection { get => strConnection; set => strConnection = value; }
-        public UI.DarkModLogic.DarkMod darkMod { get; set; } = Classes.StaticModel.DM;
+        public DarkModLogic.DarkMod darkMod { get; set; } = Classes.StaticModel.DM;
+        static Authorization.LogIn logIn = new Authorization.LogIn();
+        static Authorization.SingUp singIn = new Authorization.SingUp();
 
-        public ICommand btn_connect
+        IView currentViewModel = logIn;
+        public IView CurrentViewModel { get { return currentViewModel; } set { currentViewModel = value; RaisePropertyChanged("CurrentViewModel"); } }
+
+        public ICommand LogIn_btn_click
         {
             get
             {
                 return new CommandHandler(() => {
-                    Classes.StaticModel.model.Connection(strConnection);
-
-                    if (Classes.StaticModel.model.CanExecute)
-                        Classes.StaticModel.Connection.IsConnected = true;
-                    else
-                        Classes.StaticModel.Connection.IsConnected = false;
+                    CurrentViewModel = logIn;
                 }, () => Classes.StaticModel.model.CanExecute);
             }
         }
-
-        public ICommand btn_disconnect
+        public ICommand SingUp_btn_click
         {
             get
             {
                 return new CommandHandler(() => {
-                    Classes.StaticModel.model.Disconnect();
-                    Classes.StaticModel.Connection.IsConnected = false;
+                    CurrentViewModel = singIn;
                 }, () => Classes.StaticModel.model.CanExecute);
             }
         }
     }
 }
+    

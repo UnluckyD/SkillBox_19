@@ -103,7 +103,7 @@
                 VerticalAlignment="Top" Width="100" HorizontalAlignment="Left" 
                 Background="{x:Null}" BorderBrush="{x:Null}">
             <StackPanel HorizontalAlignment="Left" Margin="0" Width="100" Orientation="Horizontal">
-                <fa:IconBlock Margin="1,2,0,0" Width="30" Padding="3" Icon="Sun" FontSize="18" Foreground="{Binding darkMod.brushForeground}" HorizontalAlignment="Left"/>
+                <fa:IconBlock Margin="1,2,0,0" Width="30" Padding="3" Icon="Cog" FontSize="18" Foreground="{Binding darkMod.brushForeground}" HorizontalAlignment="Left"/>
                 <TextBlock Margin="0,10,0,0" Height="32" Text="Настройки" HorizontalAlignment="Left" Width="60" VerticalAlignment="Top" Foreground="{Binding darkMod.brushForeground}"/>
             </StackPanel>
         </Button>

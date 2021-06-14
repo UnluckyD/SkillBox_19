@@ -1,4 +1,4 @@
-﻿// Создание кода T4 для модели "C:\Users\User\source\repos\Mikhail__Moschenkov_19\Mikhail__Moschenkov_19\ModelDB.edmx" включено. 
+﻿// Создание кода T4 для модели "C:\Users\User\source\repos\SkillBox_19\BankSystem.DataAccess\ModelDB.edmx" включено. 
 // Чтобы включить формирование кода прежних версий, измените значение свойства "Стратегия создания кода" конструктора
 // на "Legacy ObjectContext". Это свойство доступно в окне "Свойства", если модель
 // открыта в конструкторе.

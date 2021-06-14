@@ -32,5 +32,6 @@ namespace BankSystemApp.DataAccess
         public virtual DbSet<ClientsDB> ClientsDB { get; set; }
         public virtual DbSet<Contribution> Contribution { get; set; }
         public virtual DbSet<Credit> Credit { get; set; }
+        public virtual DbSet<Authorization> Authorization { get; set; }
     }
 }
