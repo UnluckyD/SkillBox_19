@@ -16,6 +16,17 @@ namespace BankSystemApp.DataAccess
     public partial class Authorization
     {
         Random rnd = new Random();
+
+        public Role role { get {
+                switch (Permission)
+                {
+                    case 0: return Role.GUEST;
+                    case 1: return Role.EMPLOYEE;
+                    case 2: return Role.MANAGER;
+                    case 3: return Role.ADMINISTRATOR;
+                    default: return Role.GUEST;
+                }
+            } }
         public int Id { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
@@ -42,5 +53,13 @@ namespace BankSystemApp.DataAccess
             'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l',
             'Z', 'X', 'C', 'V', 'B', 'N', 'M',
             'z', 'x', 'c', 'v', 'b', 'n', 'm' };
-}
+    }
+
+    public enum Role
+    {
+        GUEST = 0,
+        EMPLOYEE = 1,
+        MANAGER = 2,
+        ADMINISTRATOR = 3
+    }
 }

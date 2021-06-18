@@ -188,3 +188,5 @@ C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\UI\Views
 C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\UI\Views\Authorization\SingUp.baml
 C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\UI\Views\AllreadyLog.g.cs
 C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\UI\Views\AllreadyLog.baml
+C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\Components\BindablePasswordBox.g.cs
+C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\Components\BindablePasswordBox.baml

@@ -150,6 +150,9 @@
     <Compile Include="Classes\Connection.cs" />
     <Compile Include="Classes\StaticModel.cs" />
     <Compile Include="Classes\WindowDragHandler.cs" />
+    <Compile Include="Components\BindablePasswordBox.xaml.cs">
+      <DependentUpon>BindablePasswordBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\DarkModLogic\DarkMod.cs" />
     <Compile Include="UI\Views\AllreadyLog.xaml.cs">
       <DependentUpon>AllreadyLog.xaml</DependentUpon>
@@ -182,6 +185,7 @@
     <Compile Include="UI\Views\ViewModelCE.cs" />
     <Compile Include="UI\Views\ViewModelCreator.cs" />
     <Compile Include="IView.cs" />
+    <Compile Include="UI\Views\Views.cs" />
     <Compile Include="Windows\AddWindow.xaml.cs">
       <DependentUpon>AddWindow.xaml</DependentUpon>
     </Compile>
@@ -201,6 +205,10 @@
     </Compile>
     <Compile Include="UI\Views\ViewModelCC.cs" />
     <Compile Include="UI\Views\ViewModelClass.cs" />
+    <Page Include="Components\BindablePasswordBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UI\Views\AllreadyLog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

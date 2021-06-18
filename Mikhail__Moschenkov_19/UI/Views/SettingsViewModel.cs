@@ -11,7 +11,7 @@ namespace BankSystemApp.UI.Views
 {
     class SettingsViewModel : BindableBase
     {
-        public UI.DarkModLogic.DarkMod dMod { get; set; } = Classes.StaticModel.DM;
+        public UI.DarkModLogic.DarkMod dMod { get; set; } = Views.DM;
         string strConnection = string.Empty;
         public string StrConnection { get => strConnection; set => strConnection = value; }
         public ICommand ChangeMod_btn_click

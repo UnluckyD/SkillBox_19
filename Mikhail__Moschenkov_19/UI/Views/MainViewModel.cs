@@ -12,14 +12,13 @@ namespace BankSystemApp.UI.Views
 {
     class MainViewModel : BindableBase
     {
-        public UI.DarkModLogic.DarkMod darkMod { get; set; } = Classes.StaticModel.DM;
-        public Classes.Connection connection { get; set; } = Classes.StaticModel.Connection;
+        public UI.DarkModLogic.DarkMod darkMod { get; set; } = Views.DM;
+        Classes.Connection connection = Classes.StaticModel.Connection;
+        public Classes.Connection Connection { get { return connection; } set { connection = value; 
+                RaisePropertyChanged("Connection"); RaisePropertyChanged("CurrentViewModel"); } }
 
-        ClientsViewModel clientsVM = new ClientsViewModel();
-        SettingsView settingsView = new SettingsView();
-        static HomePage homePage = new HomePage();
 
-        IView currentViewModel = homePage;
+        IView currentViewModel = Views.homePage;
         public IView CurrentViewModel { get { return currentViewModel; } set { currentViewModel = value; RaisePropertyChanged("CurrentViewModel"); } }
 
         public ICommand GitHub_btn_click
@@ -29,27 +28,27 @@ namespace BankSystemApp.UI.Views
 
         public ICommand Login_btn_click
         {
-            get { return new CommandHandler(() => CurrentViewModel = Classes.StaticModel.View, () => Classes.StaticModel.model.CanExecute); }
+            get { return new CommandHandler(() => CurrentViewModel = Views.View, () => Classes.StaticModel.model.CanExecute); }
         }
 
         public ICommand Home_btn_click
         {
-            get { return new CommandHandler(() => CurrentViewModel = homePage, () => Classes.StaticModel.model.CanExecute); }
+            get { return new CommandHandler(() => CurrentViewModel = Views.homePage, () => Classes.StaticModel.model.CanExecute); }
         }
 
         public ICommand Clients_btn_click
         {
             get { return new CommandHandler(() => {
-                if (Classes.StaticModel.Connection.PermissionLvl >= 3)
-                    CurrentViewModel = clientsVM;
+                if (Classes.StaticModel.Connection.Role >= DataAccess.Role.EMPLOYEE)
+                    CurrentViewModel = Views.clientsVM;
                 else
-                    Alerts.MsgWarning($"Выш уровень допуска недостаточный.\nВаш: {Classes.StaticModel.Connection.PermissionLvl}");
+                    Alerts.MsgWarning($"Выш уровень допуска недостаточный.\nВаш: {Classes.StaticModel.Connection.Role}");
             }, () => Classes.StaticModel.model.CanExecute); }
         }
 
         public ICommand Settings_btn_click
         {
-            get { return new CommandHandler(() => CurrentViewModel = settingsView, () => Classes.StaticModel.model.CanExecute); }
+            get { return new CommandHandler(() => CurrentViewModel = Views.settingsView, () => Classes.StaticModel.model.CanExecute); }
         }
 
         public ICommand CloseApp_btn_click

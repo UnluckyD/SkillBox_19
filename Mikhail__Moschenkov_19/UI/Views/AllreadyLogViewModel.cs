@@ -9,7 +9,7 @@ namespace BankSystemApp.UI.Views
 {
     class AllreadyLogViewModel
     {
-        public UI.DarkModLogic.DarkMod dMod { get; set; } = Classes.StaticModel.DM;
+        public UI.DarkModLogic.DarkMod dMod { get; set; } = Views.DM;
         public Classes.Connection connection { get; set; } = Classes.StaticModel.Connection;
 
         public ICommand LogOut_btn_click

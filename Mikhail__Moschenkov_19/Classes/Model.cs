@@ -341,7 +341,7 @@ namespace BankSystemApp.Classes
 
         public string GetConnectionFullInfo(Authorization user)
         {
-            return $"Login: {user.Login}\nID: {user.Id}\nOAuth: {user.OAuth}\nPermission: {user.Permission}";
+            return $"Login: {user.Login}\nID: {user.Id}\nOAuth: {user.OAuth}\nRole: {user.role}";
         }
 
         public void returnChanges(ClientsDB copy, ClientsDB client)

@@ -11,7 +11,7 @@ namespace BankSystemApp.UI.Views
 {
     class LoginViewModel : BindableBase
     {
-        public DarkModLogic.DarkMod darkMod { get; set; } = Classes.StaticModel.DM;
+        public DarkModLogic.DarkMod darkMod { get; set; } = Views.DM;
         static Authorization.LogIn logIn = new Authorization.LogIn();
         static Authorization.SingUp singIn = new Authorization.SingUp();
 

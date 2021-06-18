@@ -26,6 +26,7 @@ namespace BankSystemApp.Classes
         public bool IsConnected { get { return isConnected; } set { isConnected = value; 
                 RaisePropertyChanged("IsConnected"); 
                 RaisePropertyChanged("Status"); 
+                RaisePropertyChanged("ConnectionFullInfo");
                 RaisePropertyChanged("ConnectionInfo"); } }
 
         public string Status { get { return IsConnected ? "Logout" : "Login"; } }
@@ -33,7 +34,8 @@ namespace BankSystemApp.Classes
         public string ConnectionInfo { get { return StaticModel.model.GetConnectionInfo(user); } }
         public string ConnectionFullInfo { get { return StaticModel.model.GetConnectionFullInfo(user); } }
 
-        public int PermissionLvl { get { return User.Permission; } }
+        //public int PermissionLvl { get { return User.Permission; } }
+        public Role Role { get { return User.role; } }
 
         public bool Authorization(string login, string pass)
         {
@@ -60,17 +62,12 @@ namespace BankSystemApp.Classes
         {
             try
             {
-                var NewUser = new Authorization()
+                User = new Authorization()
                 {
                     Login = "guest"
                 };
-                if (NewUser == User)
-                    return false;
-                else
-                {
-                    User = NewUser;
-                    return true;
-                }
+                IsConnected = false;
+                return true;
             }
             catch (Exception ex)
             {

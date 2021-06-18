@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\App.xaml
-13-748715311
+14-1967791592
 
-36-1101245638
+381731114142
 149-1440591384
-UI\Views\AllreadyLog.xaml;UI\Views\Authorization\LogIn.xaml;UI\Views\Authorization\SingUp.xaml;UI\Views\ClientsViewModel.xaml;UI\Views\HomePage.xaml;UI\Views\LoginViewCP.xaml;UI\Views\SettingsView.xaml;Windows\AddWindow.xaml;Windows\ClientEditorWindow.xaml;Windows\ContributionWindow.xaml;Windows\CreditMenu.xaml;MainWindow.xaml;Windows\TransferWindow.xaml;
+Components\BindablePasswordBox.xaml;UI\Views\AllreadyLog.xaml;UI\Views\Authorization\LogIn.xaml;UI\Views\Authorization\SingUp.xaml;UI\Views\ClientsViewModel.xaml;UI\Views\HomePage.xaml;UI\Views\LoginViewCP.xaml;UI\Views\SettingsView.xaml;Windows\AddWindow.xaml;Windows\ClientEditorWindow.xaml;Windows\ContributionWindow.xaml;Windows\CreditMenu.xaml;MainWindow.xaml;Windows\TransferWindow.xaml;
 
 False
 

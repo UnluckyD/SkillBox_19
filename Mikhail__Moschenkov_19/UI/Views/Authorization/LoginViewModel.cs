@@ -9,9 +9,10 @@ namespace BankSystemApp.UI.Views.Authorization
 {
     class LoginViewModel
     {
+        Views views = new Views();
         public string Login { get; set; }
         public string Password { get; set; }
-        public DarkModLogic.DarkMod darkMod { get; set; } = Classes.StaticModel.DM;
+        public DarkModLogic.DarkMod darkMod { get; set; } = Views.DM;
 
         Classes.Connection connection { get; set; } = Classes.StaticModel.Connection;
 
@@ -22,6 +23,7 @@ namespace BankSystemApp.UI.Views.Authorization
                 return new CommandHandler(() => {
                     if (connection.Authorization(Login, Password))
                     {
+                        Password = "";
                         connection.IsConnected = true;
                     }
                 }, () => Classes.StaticModel.model.CanExecute);
