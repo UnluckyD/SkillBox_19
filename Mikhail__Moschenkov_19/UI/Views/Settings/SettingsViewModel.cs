@@ -12,7 +12,7 @@ namespace BankSystemApp.UI.Views
 {
     class SettingsViewModel : BindableBase
     {
-        PermisionsSettings.PermitionsDBWindow window = new PermisionsSettings.PermitionsDBWindow();
+        PermisionsSettings.PermitionsDBWindow window;
         public Classes.Connection Connection { get; set; } = Classes.StaticModel.Connection;
         public DarkModLogic.DarkMod dMod { get; set; } = Views.DM;
         string strConnection = string.Empty;
@@ -52,7 +52,10 @@ namespace BankSystemApp.UI.Views
             {
                 return new CommandHandler(() => {
                     if (Classes.StaticModel.Connection.Role >= Role.ADMINISTRATOR)
+                    {
+                        window = new PermisionsSettings.PermitionsDBWindow();
                         window.Show();
+                    }
                     else
                         Alerts.MsgWarning($"Выш уровень допуска недостаточный." +
                             $"\nВаш: {Classes.StaticModel.Connection.Role}\nТребуемый: {Role.ADMINISTRATOR}");
