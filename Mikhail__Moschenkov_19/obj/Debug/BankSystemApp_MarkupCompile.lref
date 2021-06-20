@@ -5,9 +5,12 @@ FC:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\UI\Views\Allready
 FC:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\UI\Views\Authorization\LogIn.xaml;;
 FC:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\UI\Views\Authorization\SingUp.xaml;;
 FC:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\UI\Views\ClientsViewModel.xaml;;
-FC:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\UI\Views\HomePage.xaml;;
+FC:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\UI\Views\Contributions\ContributionsView.xaml;;
+FC:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\UI\Views\Credits\CreditsView.xaml;;
+FC:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\UI\Views\Home\HomePage.xaml;;
 FC:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\UI\Views\LoginViewCP.xaml;;
-FC:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\UI\Views\SettingsView.xaml;;
+FC:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\UI\Views\PermisionsSettings\PermitionsDBWindow.xaml;;
+FC:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\UI\Views\Settings\SettingsView.xaml;;
 FC:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\Windows\AddWindow.xaml;;
 FC:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\Windows\ClientEditorWindow.xaml;;
 FC:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\Windows\ContributionWindow.xaml;;

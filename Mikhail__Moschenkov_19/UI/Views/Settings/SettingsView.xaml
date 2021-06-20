@@ -30,5 +30,8 @@
         <Button x:Name="btn_disconnect" Margin="5,53,5,0" Content="Disconnect" Command="{Binding btn_disconnect}" Foreground="{Binding dMod.brushForeground}"
                 IsEnabled="True" VerticalAlignment="Top" Grid.Column="1" BorderThickness="0" Background="{x:Null}">
         </Button>
+        <Button Margin="5,45" Content="Roles" Command="{Binding Roles_btn}" Foreground="{Binding dMod.brushForeground}" IsEnabled="{Binding Connection.IsConnectedAsAdmin}"
+                VerticalAlignment="Bottom" Grid.Column="1" BorderThickness="0" Background="{x:Null}" BorderBrush="{x:Null}">
+        </Button>
     </Grid>
 </UserControl>

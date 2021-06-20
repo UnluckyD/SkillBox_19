@@ -334,7 +334,7 @@ namespace BankSystemApp.Classes
         {
             if (bankSystem != null)
                 return $"Пользователь: {user.Login.Trim(' ')}" +
-                    $"\nУровень доступа: {user.Permission}";
+                    $"\nРоль: {user.role}";
             else
                 return "БД не подключена.";
         }

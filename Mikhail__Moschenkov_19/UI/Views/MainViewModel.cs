@@ -46,6 +46,27 @@ namespace BankSystemApp.UI.Views
             }, () => Classes.StaticModel.model.CanExecute); }
         }
 
+        public ICommand Credits_btn_click
+        {
+            get { return new CommandHandler(() =>
+            {
+                if (Classes.StaticModel.Connection.Role >= DataAccess.Role.EMPLOYEE)
+                    CurrentViewModel = Views.credits;
+                else
+                    Alerts.MsgWarning($"Выш уровень допуска недостаточный.\nВаш: {Classes.StaticModel.Connection.Role}");
+            }, () => Classes.StaticModel.model.CanExecute); }
+        }
+        public ICommand Contributions_btn_click
+        {
+            get { return new CommandHandler(() =>
+            {
+                if (Classes.StaticModel.Connection.Role >= DataAccess.Role.EMPLOYEE)
+                    CurrentViewModel = Views.contributions;
+                else
+                    Alerts.MsgWarning($"Выш уровень допуска недостаточный.\nВаш: {Classes.StaticModel.Connection.Role}");
+            }, () => Classes.StaticModel.model.CanExecute); }
+        }
+
         public ICommand Settings_btn_click
         {
             get { return new CommandHandler(() => CurrentViewModel = Views.settingsView, () => Classes.StaticModel.model.CanExecute); }

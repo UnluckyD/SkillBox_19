@@ -169,19 +169,31 @@
     <Compile Include="UI\Views\ClientsViewModel.xaml.cs">
       <DependentUpon>ClientsViewModel.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\HomePage.xaml.cs">
+    <Compile Include="UI\Views\Contributions\ContributionsView.xaml.cs">
+      <DependentUpon>ContributionsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\Contributions\ContributionsViewModel.cs" />
+    <Compile Include="UI\Views\Credits\CreditsView.xaml.cs">
+      <DependentUpon>CreditsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\Credits\CreditsViewModel.cs" />
+    <Compile Include="UI\Views\Home\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\HomePageViewModel.cs" />
+    <Compile Include="UI\Views\Home\HomePageViewModel.cs" />
     <Compile Include="UI\Views\LoginViewCP.xaml.cs">
       <DependentUpon>LoginViewCP.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\Views\LoginViewModel.cs" />
     <Compile Include="UI\Views\MainViewModel.cs" />
-    <Compile Include="UI\Views\SettingsView.xaml.cs">
+    <Compile Include="UI\Views\PermisionsSettings\PermitionsDBWindow.xaml.cs">
+      <DependentUpon>PermitionsDBWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\PermisionsSettings\ViewModel.cs" />
+    <Compile Include="UI\Views\Settings\SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\SettingsViewModel.cs" />
+    <Compile Include="UI\Views\Settings\SettingsViewModel.cs" />
     <Compile Include="UI\Views\ViewModelCE.cs" />
     <Compile Include="UI\Views\ViewModelCreator.cs" />
     <Compile Include="IView.cs" />
@@ -225,7 +237,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="UI\Views\HomePage.xaml">
+    <Page Include="UI\Views\Contributions\ContributionsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Views\Credits\CreditsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Views\Home\HomePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -233,7 +253,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UI\Views\SettingsView.xaml">
+    <Page Include="UI\Views\PermisionsSettings\PermitionsDBWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Views\Settings\SettingsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -306,5 +330,6 @@
       <Name>BankSystemApp.DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

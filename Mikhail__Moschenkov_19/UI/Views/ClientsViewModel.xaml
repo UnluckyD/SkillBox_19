@@ -12,7 +12,7 @@
     <Grid>
         <DataGrid x:Name="dg_list" Margin="0,0,5,5" AutoGenerateColumns="False" Background="#f0ffff"
                   ItemsSource="{Binding model.Clients}"
-                  SelectedItem="{Binding Client}" Grid.Column="1">
+                  SelectedItem="{Binding Client}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Фамилия" Binding="{Binding lastName}" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Имя" Binding="{Binding firstName}" IsReadOnly="True"/>

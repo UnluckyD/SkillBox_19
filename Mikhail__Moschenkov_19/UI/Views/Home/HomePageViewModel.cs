@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BankSystemApp.UI.Views
+namespace BankSystemApp.UI.Views.Home
 {
     class HomePageViewModel
     {

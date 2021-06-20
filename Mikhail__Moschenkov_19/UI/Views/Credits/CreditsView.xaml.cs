@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace BankSystemApp.UI.Views
+namespace BankSystemApp.UI.Views.Credits
 {
     /// <summary>
-    /// Логика взаимодействия для HomePage.xaml
+    /// Логика взаимодействия для CreditsView.xaml
     /// </summary>
-    public partial class HomePage : UserControl, IView
+    public partial class CreditsView : UserControl, IView
     {
-        public HomePage()
+        public CreditsView()
         {
             InitializeComponent();
         }

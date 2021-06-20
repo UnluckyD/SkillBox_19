@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BankSystemApp.UI.Views
 {
-    class Views : INotifyPropertyChanged
+    class Views
     {
         public static DarkModLogic.DarkMod DM = new DarkModLogic.DarkMod();
 
@@ -18,9 +18,9 @@ namespace BankSystemApp.UI.Views
 
         public static ClientsViewModel clientsVM = new ClientsViewModel();
         public static SettingsView settingsView = new SettingsView();
-        public static HomePage homePage = new HomePage();
-
-        public event PropertyChangedEventHandler PropertyChanged;
+        public static Home.HomePage homePage = new Home.HomePage();
+        public static Credits.CreditsView credits = new Credits.CreditsView();
+        public static Contribution.ContributionsView contributions = new Contribution.ContributionsView();
 
         public static IView View { get { return GetCurrentView(); } }
         static IView GetCurrentView()
@@ -29,16 +29,6 @@ namespace BankSystemApp.UI.Views
                 return allreadyLog;
             else
                 return loginView;
-        }
-        public void OnPropertyChanged([CallerMemberName] string prop = "")
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
-        }
-
-        public void UpdateView()
-        {
-            OnPropertyChanged("View");
         }
     }
 }

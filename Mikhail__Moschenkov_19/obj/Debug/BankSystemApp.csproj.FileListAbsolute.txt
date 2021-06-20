@@ -178,10 +178,6 @@ C:\Users\User\Source\Repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\BankSyst
 C:\Users\User\Source\Repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\BankSystemApp.pdb
 C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\UI\Views\ClientsViewModel.g.cs
 C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\UI\Views\ClientsViewModel.baml
-C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\UI\Views\SettingsView.g.cs
-C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\UI\Views\SettingsView.baml
-C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\UI\Views\HomePage.g.cs
-C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\UI\Views\HomePage.baml
 C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\UI\Views\Authorization\LogIn.g.cs
 C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\UI\Views\Authorization\LogIn.baml
 C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\UI\Views\Authorization\SingUp.g.cs
@@ -190,3 +186,13 @@ C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\UI\Views
 C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\UI\Views\AllreadyLog.baml
 C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\Components\BindablePasswordBox.g.cs
 C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\Components\BindablePasswordBox.baml
+C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\UI\Views\Contributions\ContributionsView.g.cs
+C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\UI\Views\Credits\CreditsView.g.cs
+C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\UI\Views\Contributions\ContributionsView.baml
+C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\UI\Views\Credits\CreditsView.baml
+C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\UI\Views\PermisionsSettings\PermitionsDBWindow.g.cs
+C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\UI\Views\PermisionsSettings\PermitionsDBWindow.baml
+C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\UI\Views\Home\HomePage.g.cs
+C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\UI\Views\Settings\SettingsView.g.cs
+C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\UI\Views\Home\HomePage.baml
+C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\UI\Views\Settings\SettingsView.baml

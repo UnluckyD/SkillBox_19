@@ -1,4 +1,5 @@
-﻿using Prism.Mvvm;
+﻿using BankSystemApp.DataAccess;
+using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,9 @@ namespace BankSystemApp.UI.Views
 {
     class SettingsViewModel : BindableBase
     {
-        public UI.DarkModLogic.DarkMod dMod { get; set; } = Views.DM;
+        PermisionsSettings.PermitionsDBWindow window = new PermisionsSettings.PermitionsDBWindow();
+        public Classes.Connection Connection { get; set; } = Classes.StaticModel.Connection;
+        public DarkModLogic.DarkMod dMod { get; set; } = Views.DM;
         string strConnection = string.Empty;
         public string StrConnection { get => strConnection; set => strConnection = value; }
         public ICommand ChangeMod_btn_click
@@ -28,11 +31,6 @@ namespace BankSystemApp.UI.Views
             {
                 return new CommandHandler(() => {
                     Classes.StaticModel.model.Connection(strConnection);
-
-                    //if (Classes.StaticModel.model.CanExecute)
-                    //    Classes.StaticModel.Connection.IsConnected = true;
-                    //else
-                    //    Classes.StaticModel.Connection.IsConnected = false;
                 }, () => Classes.StaticModel.model.CanExecute);
             }
         }
@@ -43,8 +41,21 @@ namespace BankSystemApp.UI.Views
             {
                 return new CommandHandler(() => {
                     Classes.StaticModel.model.Disconnect();
-                    //Classes.StaticModel.Connection.IsConnected = false;
                     Classes.StaticModel.model.Clients = null;
+                }, () => Classes.StaticModel.model.CanExecute);
+            }
+        }
+
+        public ICommand Roles_btn
+        {
+            get
+            {
+                return new CommandHandler(() => {
+                    if (Classes.StaticModel.Connection.Role >= Role.ADMINISTRATOR)
+                        window.Show();
+                    else
+                        Alerts.MsgWarning($"Выш уровень допуска недостаточный." +
+                            $"\nВаш: {Classes.StaticModel.Connection.Role}\nТребуемый: {Role.ADMINISTRATOR}");
                 }, () => Classes.StaticModel.model.CanExecute);
             }
         }

@@ -12,12 +12,12 @@ namespace BankSystemApp.UI.Views
     {
         public Classes.Model model = new Classes.Model();
         ClientsDB client;
-        Credit credit;
-        Contribution contribution;
+        DataAccess.Credit credit;
+        DataAccess.Contribution contribution;
         public DateTime Date { get; set; }
         public ClientsDB Client { get { return client; } set { client = value; RaisePropertyChanged("Client"); } }
-        public Credit Credit { get { return credit; } set { credit = value; RaisePropertyChanged("Credit"); } }
-        public Contribution Contribution { get { return contribution; } set { contribution = value; RaisePropertyChanged("Contribution"); } }
+        public DataAccess.Credit Credit { get { return credit; } set { credit = value; RaisePropertyChanged("Credit"); } }
+        public DataAccess.Contribution Contribution { get { return contribution; } set { contribution = value; RaisePropertyChanged("Contribution"); } }
         public bool capitalization { get; set; }
         public string CreditSum { get; set; }
         public ICommand Credit_btn_click

@@ -27,7 +27,10 @@ namespace BankSystemApp.Classes
                 RaisePropertyChanged("IsConnected"); 
                 RaisePropertyChanged("Status"); 
                 RaisePropertyChanged("ConnectionFullInfo");
+                RaisePropertyChanged("IsConnectedAsAdmin");
                 RaisePropertyChanged("ConnectionInfo"); } }
+
+        public bool IsConnectedAsAdmin { get { return (isConnected && user.role == Role.ADMINISTRATOR); } }
 
         public string Status { get { return IsConnected ? "Logout" : "Login"; } }
 
