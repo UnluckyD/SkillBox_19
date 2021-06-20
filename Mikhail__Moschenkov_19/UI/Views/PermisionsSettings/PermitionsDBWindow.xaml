@@ -10,8 +10,12 @@
         <local:ViewModel/>
     </Window.DataContext>
     <Grid>
-        <DataGrid Margin="0,0,5,5" Background="#f0ffff"
+        <DataGrid Margin="5,5,5,35" Background="#f0ffff"
                   ItemsSource="{Binding model.Authorization}">
         </DataGrid>
+        <Button VerticalAlignment="Bottom" HorizontalAlignment="Right" Command="{Binding Save_btn_click}"
+                Margin="5" Height="22" Width="90" Background="{x:Null} " BorderBrush="Black">
+            <TextBlock Text="Save"/>
+        </Button>
     </Grid>
 </Window>

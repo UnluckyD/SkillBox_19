@@ -360,5 +360,10 @@ namespace BankSystemApp.Classes
             client.middleName = copy.middleName;
             client.pasport = copy.pasport;
         }
+
+        public void RepositiryAuthSave()
+        {
+            repositoryAuthorization.Save();
+        }
     }
 }
