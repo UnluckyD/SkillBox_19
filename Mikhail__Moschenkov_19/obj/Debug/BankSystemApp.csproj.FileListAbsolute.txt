@@ -196,3 +196,5 @@ C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\UI\Views
 C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\UI\Views\Settings\SettingsView.g.cs
 C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\UI\Views\Home\HomePage.baml
 C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\UI\Views\Settings\SettingsView.baml
+C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\UI\Views\Components\LangSwitcher.g.cs
+C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\obj\Debug\UI\Views\Components\LangSwitcher.baml

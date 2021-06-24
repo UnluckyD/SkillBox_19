@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\User\source\repos\SkillBox_19\Mikhail__Moschenkov_19\App.xaml
-17-546341428
+181478153707
 
-45189833845
+47-1720429692
 149-1440591384
-Components\BindablePasswordBox.xaml;UI\Views\AllreadyLog.xaml;UI\Views\Authorization\LogIn.xaml;UI\Views\Authorization\SingUp.xaml;UI\Views\ClientsViewModel.xaml;UI\Views\Contributions\ContributionsView.xaml;UI\Views\Credits\CreditsView.xaml;UI\Views\Home\HomePage.xaml;UI\Views\LoginViewCP.xaml;UI\Views\PermisionsSettings\PermitionsDBWindow.xaml;UI\Views\Settings\SettingsView.xaml;Windows\AddWindow.xaml;Windows\ClientEditorWindow.xaml;Windows\ContributionWindow.xaml;Windows\CreditMenu.xaml;MainWindow.xaml;Windows\TransferWindow.xaml;
+Components\BindablePasswordBox.xaml;UI\Views\AllreadyLog.xaml;UI\Views\Authorization\LogIn.xaml;UI\Views\Authorization\SingUp.xaml;UI\Views\ClientsViewModel.xaml;UI\Views\Components\LangSwitcher.xaml;UI\Views\Contributions\ContributionsView.xaml;UI\Views\Credits\CreditsView.xaml;UI\Views\Home\HomePage.xaml;UI\Views\LoginViewCP.xaml;UI\Views\PermisionsSettings\PermitionsDBWindow.xaml;UI\Views\Settings\SettingsView.xaml;Windows\AddWindow.xaml;Windows\ClientEditorWindow.xaml;Windows\ContributionWindow.xaml;Windows\CreditMenu.xaml;MainWindow.xaml;Windows\TransferWindow.xaml;
 
 True
 

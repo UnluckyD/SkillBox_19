@@ -169,6 +169,9 @@
     <Compile Include="UI\Views\ClientsViewModel.xaml.cs">
       <DependentUpon>ClientsViewModel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\Views\Components\LangSwitcher.xaml.cs">
+      <DependentUpon>LangSwitcher.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\Views\Contributions\ContributionsView.xaml.cs">
       <DependentUpon>ContributionsView.xaml</DependentUpon>
     </Compile>
@@ -181,6 +184,7 @@
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\Views\Home\HomePageViewModel.cs" />
+    <Compile Include="UI\Views\LangView.cs" />
     <Compile Include="UI\Views\LoginViewCP.xaml.cs">
       <DependentUpon>LoginViewCP.xaml</DependentUpon>
     </Compile>
@@ -236,6 +240,10 @@
     <Page Include="UI\Views\ClientsViewModel.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Views\Components\LangSwitcher.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UI\Views\Contributions\ContributionsView.xaml">
       <SubType>Designer</SubType>

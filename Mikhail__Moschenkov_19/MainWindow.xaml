@@ -6,11 +6,25 @@
         xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp" 
         xmlns:local="clr-namespace:BankSystemApp.UI.Views"
         xmlns:windowDrag="clr-namespace:BankSystemApp.Classes"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:ei="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d" Height="450" Width="800" MinHeight="410" MinWidth="500"
         WindowStyle="None" Background="{x:Null}" AllowsTransparency="True">
     <Window.DataContext>
         <local:MainViewModel x:Name="VM"/>
     </Window.DataContext>
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="lang">
+            <Style.Setters>
+                <Setter Property="Button.Height" Value="30" />
+            </Style.Setters>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Height" Value="120" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
     <Grid Background="{Binding darkMod.brushBackgraund}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="120"/>
@@ -33,87 +47,227 @@
                 </DataTemplate>
             </ContentControl.Resources>
         </ContentControl>
-        <Border BorderBrush="{Binding darkMod.brushForeground}" BorderThickness="1" Grid.Column="0" Grid.ColumnSpan="3" Margin="-1,0,-1,0" Grid.Row="1" >
+        <Border BorderBrush="{Binding darkMod.brushForeground}" 
+                BorderThickness="1" Grid.Column="0" 
+                Grid.ColumnSpan="3" Margin="-1,0,-1,0" Grid.Row="1" >
             <StackPanel Orientation="Horizontal">
-                <TextBlock HorizontalAlignment="Left" Margin="10" TextWrapping="Wrap"
-                           Text="SkillBox" VerticalAlignment="Top" FontSize="26" Foreground="{Binding darkMod.brushForeground}" FontWeight="Bold"/>
+                <TextBlock HorizontalAlignment="Left" Margin="10" 
+                           TextWrapping="Wrap"
+                           Text="SkillBox" VerticalAlignment="Top" 
+                           FontSize="26" 
+                           Foreground="{Binding darkMod.brushForeground}" 
+                           FontWeight="Bold"/>
             </StackPanel>
         </Border>
-        <Border BorderBrush="{Binding darkMod.brushBackgraund}" Background="{Binding darkMod.brushForeground}"
-                BorderThickness="1" Grid.Column="0" Grid.ColumnSpan="3" Margin="-1,-1,-1,0" Grid.Row="0" windowDrag:WindowDragHandler.EnableDrag="True">
-            <StackPanel Orientation="Horizontal" Margin="0,3,5,0" VerticalAlignment="Bottom" HorizontalAlignment="Right">
-                <Button HorizontalAlignment="Right" Width="18" Margin="1" BorderBrush="{x:Null}" Background="Gray" Command="{Binding MinimazeApp_btn_click}">
-                    <TextBlock Text="_" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Border BorderBrush="{Binding darkMod.brushBackgraund}" 
+                Background="{Binding darkMod.brushForeground}"
+                BorderThickness="1" 
+                Grid.Column="0" 
+                Grid.ColumnSpan="3" 
+                Margin="-1,-1,-1,0" 
+                Grid.Row="0" 
+                windowDrag:WindowDragHandler.EnableDrag="True">
+            <StackPanel Orientation="Horizontal" 
+                        Margin="0,3,5,0" 
+                        VerticalAlignment="Bottom" 
+                        HorizontalAlignment="Right">
+                <Button HorizontalAlignment="Right" 
+                        Width="18" Margin="1" 
+                        BorderBrush="{x:Null}" 
+                        Background="Gray" 
+                        Command="{Binding MinimazeApp_btn_click}">
+                    <TextBlock Text="_" 
+                               VerticalAlignment="Center" 
+                               HorizontalAlignment="Center"/>
                 </Button>
-                <Button HorizontalAlignment="Right" Width="18" Margin="1" BorderBrush="{x:Null}" Background="DarkRed" Command="{Binding CloseApp_btn_click}">
-                    <TextBlock Text="X" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Button HorizontalAlignment="Right" 
+                        Width="18" Margin="1" 
+                        BorderBrush="{x:Null}" 
+                        Background="DarkRed" 
+                        Command="{Binding CloseApp_btn_click}">
+                    <TextBlock Text="X" 
+                               VerticalAlignment="Center" 
+                               HorizontalAlignment="Center"/>
                 </Button>
             </StackPanel>
         </Border>
-        <Border Grid.Column="0" Grid.Row="1" Margin="-1,54,0,-1" BorderThickness="1" BorderBrush="{Binding darkMod.brushForeground}" Grid.RowSpan="2"/>
-        <Button HorizontalAlignment="Right" Height="30" Width="90" Margin="0,10,10,0" Grid.Column="2" 
-                Background="{x:Null}" BorderBrush="{x:Null}" Command="{Binding Login_btn_click}" VerticalAlignment="Top" Grid.Row="1">
-            <StackPanel HorizontalAlignment="Left" Margin="0" Width="90" Orientation="Horizontal">
-                <fa:IconBlock Margin="1,2,0,0" Width="30" Padding="3" Icon="User" FontSize="18" Foreground="{Binding darkMod.brushForeground}" HorizontalAlignment="Left"/>
-                <TextBlock Margin="0,5,0,0" Height="32" Text="{Binding Connection.Status}" HorizontalAlignment="Left" 
-                           Width="52" VerticalAlignment="Top" Foreground="{Binding darkMod.brushForeground}"/>
+        <Button HorizontalAlignment="Right" 
+                Height="30" Width="90" 
+                Margin="0,10,10,0" Grid.Column="2" 
+                Background="{x:Null}" 
+                BorderBrush="{x:Null}" 
+                Command="{Binding Login_btn_click}" 
+                VerticalAlignment="Top" Grid.Row="1">
+            <StackPanel HorizontalAlignment="Left" 
+                        Margin="0" Width="90" 
+                        Orientation="Horizontal">
+                <fa:IconBlock Margin="1,2,0,0" 
+                              Width="30" 
+                              Padding="3" 
+                              Icon="User" 
+                              FontSize="18" 
+                              Foreground="{Binding darkMod.brushForeground}" 
+                              HorizontalAlignment="Left"/>
+                <TextBlock Margin="0,5,0,0" 
+                           Height="32" 
+                           Text="{Binding Connection.Status}" 
+                           HorizontalAlignment="Left" 
+                           Width="52" 
+                           VerticalAlignment="Top" 
+                           Foreground="{Binding darkMod.brushForeground}"/>
             </StackPanel>
         </Button>
-        <Button HorizontalAlignment="Left" Height="30" Width="90" Margin="60,10,0,0" Grid.Column="2" 
-                Background="{x:Null}" BorderBrush="{x:Null}" Command="{Binding Login_btn_click}" VerticalAlignment="Top" Grid.Row="1">
-            <StackPanel HorizontalAlignment="Left" Margin="0" Width="100" Orientation="Horizontal">
-                <fa:IconBlock Margin="1,2,0,0" Width="30" Padding="3" Icon="Language" FontSize="18" Foreground="{Binding darkMod.brushForeground}" HorizontalAlignment="Left"/>
-                <TextBlock Margin="0,5,0,0" Height="32" Text="Language" HorizontalAlignment="Left" Width="52" VerticalAlignment="Top" Foreground="{Binding darkMod.brushForeground}"/>
-            </StackPanel>
+        <Button Content="{Binding LangViewModel}" 
+                x:Name="lang" HorizontalAlignment="Left" 
+                Width="90" Height="30"
+                Margin="60,10,0,0" Grid.Column="2"
+               VerticalAlignment="Top" Grid.Row="1">
         </Button>
 
-        <Button Grid.Row="2" Margin="10,10,0,0" Command="{Binding Home_btn_click}"
-                Height="35" VerticalAlignment="Top" Width="100" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}">
-            <StackPanel HorizontalAlignment="Left" Margin="0" Width="100" Orientation="Horizontal">
-                <fa:IconBlock Margin="1,2,0,0" Width="30" Padding="3" Icon="Home" FontSize="18" Foreground="{Binding darkMod.brushForeground}" HorizontalAlignment="Left"/>
-                <TextBlock Margin="0,10,0,0" Height="32" Text="Home" HorizontalAlignment="Left" Width="42" VerticalAlignment="Top" Foreground="{Binding darkMod.brushForeground}"/>
-            </StackPanel>
-        </Button>
-        <Button Grid.Row="2" Margin="10,55,0,0" Height="35" VerticalAlignment="Top" Width="100" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}"
-                Command="{Binding Clients_btn_click}">
-            <StackPanel HorizontalAlignment="Left" Margin="0" Width="100" Orientation="Horizontal">
-                <fa:IconBlock Margin="1,2,0,0" Width="30" Padding="3" Icon="Users" FontSize="18" Foreground="{Binding darkMod.brushForeground}" HorizontalAlignment="Left"/>
-                <TextBlock Margin="0,10,0,0" Height="32" Text="Клиенты" HorizontalAlignment="Left" Width="50" VerticalAlignment="Top" Foreground="{Binding darkMod.brushForeground}"/>
-            </StackPanel>
-        </Button>
-        <Button Grid.Row="2" Margin="10,100,0,0" Height="35" VerticalAlignment="Top" Width="100" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}">
-            <StackPanel HorizontalAlignment="Left" Margin="0" Width="100" Orientation="Horizontal">
-                <fa:IconBlock Margin="1,2,0,0" Width="30" Padding="3" Icon="DollarSign" FontSize="18" Foreground="{Binding darkMod.brushForeground}" HorizontalAlignment="Left"/>
-                <TextBlock Margin="0,10,0,0" Height="32" Text="Счёт" HorizontalAlignment="Left" Width="42" VerticalAlignment="Top" Foreground="{Binding darkMod.brushForeground}"/>
-            </StackPanel>
-        </Button>
-        <Button Grid.Row="2" Margin="10,145,0,0" Command="{Binding Credits_btn_click}"
-                Height="35" VerticalAlignment="Top" Width="100" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}">
-            <StackPanel HorizontalAlignment="Left" Margin="0" Width="100" Orientation="Horizontal">
-                <fa:IconBlock Margin="1,2,0,0" Width="30" Padding="3" Icon="University" FontSize="18" Foreground="{Binding darkMod.brushForeground}" HorizontalAlignment="Left"/>
-                <TextBlock Margin="0,10,0,0" Height="32" Text="Кредит" HorizontalAlignment="Left" Width="42" VerticalAlignment="Top" Foreground="{Binding darkMod.brushForeground}"/>
-            </StackPanel>
-        </Button>
-        <Button Grid.Row="2" Margin="10,190,0,0" Command="{Binding Contributions_btn_click}"
-                Height="35" VerticalAlignment="Top" Width="100" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}">
-            <StackPanel HorizontalAlignment="Left" Margin="0" Width="100" Orientation="Horizontal">
-                <fa:IconBlock Margin="1,2,0,0" Width="30" Padding="3" Icon="PiggyBank" FontSize="18" Foreground="{Binding darkMod.brushForeground}" HorizontalAlignment="Left"/>
-                <TextBlock Margin="0,10,0,0" Height="32" Text="Вклад" HorizontalAlignment="Left" Width="42" VerticalAlignment="Top" Foreground="{Binding darkMod.brushForeground}"/>
-            </StackPanel>
-        </Button>
-        <Button Grid.Row="2" Margin="10,235,0,0" Height="35" Command="{Binding Settings_btn_click}"
-                VerticalAlignment="Top" Width="100" HorizontalAlignment="Left" 
+        <Border Grid.Column="0" Grid.Row="1" 
+                Margin="-1,54,0,-1" 
+                BorderThickness="1" 
+                BorderBrush="{Binding darkMod.brushForeground}" 
+                Grid.RowSpan="2"/>
+        <Button Grid.Row="2" Margin="10,10,0,0" 
+                Command="{Binding Home_btn_click}"
+                Height="35" VerticalAlignment="Top" 
+                Width="100" HorizontalAlignment="Left" 
                 Background="{x:Null}" BorderBrush="{x:Null}">
-            <StackPanel HorizontalAlignment="Left" Margin="0" Width="100" Orientation="Horizontal">
-                <fa:IconBlock Margin="1,2,0,0" Width="30" Padding="3" Icon="Cog" FontSize="18" Foreground="{Binding darkMod.brushForeground}" HorizontalAlignment="Left"/>
-                <TextBlock Margin="0,10,0,0" Height="32" Text="Настройки" HorizontalAlignment="Left" Width="60" VerticalAlignment="Top" Foreground="{Binding darkMod.brushForeground}"/>
+            <StackPanel HorizontalAlignment="Left" 
+                        Margin="0" Width="100" Orientation="Horizontal">
+                <fa:IconBlock Margin="1,2,0,0" 
+                              Width="30" 
+                              Padding="3" 
+                              Icon="Home" 
+                              FontSize="18" 
+                              Foreground="{Binding darkMod.brushForeground}" 
+                              HorizontalAlignment="Left"/>
+                <TextBlock Margin="0,10,0,0" Height="32" 
+                           Text="Home" HorizontalAlignment="Left" 
+                           Width="42" VerticalAlignment="Top" 
+                           Foreground="{Binding darkMod.brushForeground}"/>
             </StackPanel>
         </Button>
-        <Button Grid.Row="2" Margin="10,0,0,10" Height="35" VerticalAlignment="Bottom" Width="100"
-                HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}" Command="{Binding GitHub_btn_click}">
-            <StackPanel HorizontalAlignment="Left" Margin="0" Width="100" Orientation="Horizontal">
-                <fa:IconBlock Margin="1,2,0,0" Width="30" Padding="3" Icon="Github" FontSize="18" Foreground="{Binding darkMod.brushForeground}" HorizontalAlignment="Left"/>
-                <TextBlock Margin="0,10,0,0" Height="32" Text="GitHub" HorizontalAlignment="Left" Width="60" VerticalAlignment="Top" Foreground="{Binding darkMod.brushForeground}"/>
+        <Button Grid.Row="2" Margin="10,55,0,0" 
+                Height="35" VerticalAlignment="Top" 
+                Width="100" HorizontalAlignment="Left" 
+                Background="{x:Null}" BorderBrush="{x:Null}"
+                Command="{Binding Clients_btn_click}">
+            <StackPanel HorizontalAlignment="Left" 
+                        Margin="0" Width="100" Orientation="Horizontal">
+                <fa:IconBlock Margin="1,2,0,0" Width="30" 
+                              Padding="3" Icon="Users" 
+                              FontSize="18" 
+                              Foreground="{Binding darkMod.brushForeground}" 
+                              HorizontalAlignment="Left"/>
+                <TextBlock Margin="0,10,0,0" Height="32" 
+                           Text="Клиенты" HorizontalAlignment="Left" 
+                           Width="50" VerticalAlignment="Top" 
+                           Foreground="{Binding darkMod.brushForeground}"/>
+            </StackPanel>
+        </Button>
+        <Button Grid.Row="2" Margin="10,100,0,0" 
+                Height="35" VerticalAlignment="Top" 
+                Width="100" HorizontalAlignment="Left" 
+                Background="{x:Null}" BorderBrush="{x:Null}">
+            <StackPanel HorizontalAlignment="Left" 
+                        Margin="0" Width="100" Orientation="Horizontal">
+                <fa:IconBlock Margin="1,2,0,0" Width="30" 
+                              Padding="3" Icon="DollarSign" 
+                              FontSize="18" 
+                              Foreground="{Binding darkMod.brushForeground}" 
+                              HorizontalAlignment="Left"/>
+                <TextBlock Margin="0,10,0,0" 
+                           Height="32" Text="Счёт"
+                           HorizontalAlignment="Left" 
+                           Width="42" VerticalAlignment="Top"
+                           Foreground="{Binding darkMod.brushForeground}"/>
+            </StackPanel>
+        </Button>
+        <Button Grid.Row="2" Margin="10,145,0,0" 
+                Command="{Binding Credits_btn_click}"
+                Height="35" VerticalAlignment="Top" 
+                Width="100" HorizontalAlignment="Left" 
+                Background="{x:Null}" BorderBrush="{x:Null}">
+            <StackPanel HorizontalAlignment="Left" Margin="0" 
+                        Width="100" Orientation="Horizontal">
+                <fa:IconBlock Margin="1,2,0,0" Width="30" 
+                              Padding="3" Icon="University"
+                              FontSize="18" Foreground="{Binding darkMod.brushForeground}" HorizontalAlignment="Left"/>
+                <TextBlock Margin="0,10,0,0" Height="32" 
+                           Text="Кредит" 
+                           HorizontalAlignment="Left" 
+                           Width="42" 
+                           VerticalAlignment="Top" 
+                           Foreground="{Binding darkMod.brushForeground}"/>
+            </StackPanel>
+        </Button>
+        <Button Grid.Row="2" Margin="10,190,0,0" 
+                Command="{Binding Contributions_btn_click}"
+                Height="35" VerticalAlignment="Top" 
+                Width="100" HorizontalAlignment="Left" 
+                Background="{x:Null}" BorderBrush="{x:Null}">
+            <StackPanel HorizontalAlignment="Left" 
+                        Margin="0" Width="100" 
+                        Orientation="Horizontal">
+                <fa:IconBlock Margin="1,2,0,0" 
+                              Width="30" 
+                              Padding="3" Icon="PiggyBank" 
+                              FontSize="18" 
+                              Foreground="{Binding darkMod.brushForeground}"
+                              HorizontalAlignment="Left"/>
+                <TextBlock Margin="0,10,0,0" 
+                           Height="32" Text="Вклад" 
+                           HorizontalAlignment="Left" 
+                           Width="42" 
+                           VerticalAlignment="Top"
+                           Foreground="{Binding darkMod.brushForeground}"/>
+            </StackPanel>
+        </Button>
+        <Button Grid.Row="2" Margin="10,235,0,0"
+                Height="35" Command="{Binding Settings_btn_click}"
+                VerticalAlignment="Top"
+                Width="100" HorizontalAlignment="Left" 
+                Background="{x:Null}" 
+                BorderBrush="{x:Null}">
+            <StackPanel HorizontalAlignment="Left"
+                        Margin="0" Width="100"
+                        Orientation="Horizontal">
+                <fa:IconBlock Margin="1,2,0,0"
+                              Width="30" Padding="3"
+                              Icon="Cog"
+                              FontSize="18" 
+                              Foreground="{Binding darkMod.brushForeground}"
+                              HorizontalAlignment="Left"/>
+                <TextBlock Margin="0,10,0,0"
+                           Height="32" Text="Настройки"
+                           HorizontalAlignment="Left"
+                           Width="60" VerticalAlignment="Top"
+                           Foreground="{Binding darkMod.brushForeground}"/>
+            </StackPanel>
+        </Button>
+        <Button Grid.Row="2" Margin="10,0,0,10"
+                Height="35" VerticalAlignment="Bottom" Width="100"
+                HorizontalAlignment="Left"
+                Background="{x:Null}" 
+                BorderBrush="{x:Null}" 
+                Command="{Binding GitHub_btn_click}">
+            <StackPanel HorizontalAlignment="Left"
+                        Margin="0" Width="100"
+                        Orientation="Horizontal">
+                <fa:IconBlock Margin="1,2,0,0"
+                              Width="30"
+                              Padding="3" Icon="Github"
+                              FontSize="18" 
+                              Foreground="{Binding darkMod.brushForeground}"
+                              HorizontalAlignment="Left"/>
+                <TextBlock Margin="0,10,0,0" 
+                           Height="32" Text="GitHub"
+                           HorizontalAlignment="Left" 
+                           Width="60" 
+                           VerticalAlignment="Top"
+                           Foreground="{Binding darkMod.brushForeground}"/>
             </StackPanel>
         </Button>
     </Grid>

@@ -5,8 +5,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Media;
+using System.Windows.Media.Animation;
 
 namespace BankSystemApp.UI.Views
 {
@@ -14,9 +15,16 @@ namespace BankSystemApp.UI.Views
     {
         public UI.DarkModLogic.DarkMod darkMod { get; set; } = Views.DM;
         Classes.Connection connection = Classes.StaticModel.Connection;
+        public Button lang_btn { get; set; }
+        DoubleAnimation langAnimation = new DoubleAnimation() {
+            From = 0,
+            To = 90,
+            Duration = TimeSpan.FromMilliseconds(150)
+        } ;
         public Classes.Connection Connection { get { return connection; } set { connection = value; 
                 RaisePropertyChanged("Connection"); RaisePropertyChanged("CurrentViewModel"); } }
 
+        public Components.LangSwitcher LangViewModel { get; set; } = new Components.LangSwitcher();
 
         IView currentViewModel = Views.homePage;
         public IView CurrentViewModel { get { return currentViewModel; } set { currentViewModel = value; RaisePropertyChanged("CurrentViewModel"); } }
@@ -29,6 +37,17 @@ namespace BankSystemApp.UI.Views
         public ICommand Login_btn_click
         {
             get { return new CommandHandler(() => CurrentViewModel = Views.View, () => Classes.StaticModel.model.CanExecute); }
+        }
+        public ICommand LangAnimation
+        {
+            get { return new CommandHandler((m) => 
+            { 
+                if (m.Height == 30)
+                    langAnimation.AutoReverse = false;
+                else
+                    langAnimation.AutoReverse = true;
+                m.BeginAnimation(Button.HeightProperty, langAnimation); 
+            }, () => Classes.StaticModel.model.CanExecute, lang_btn); }
         }
 
         public ICommand Home_btn_click

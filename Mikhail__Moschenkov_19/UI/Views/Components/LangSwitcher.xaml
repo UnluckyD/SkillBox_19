@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="BankSystemApp.UI.Views.Components.LangSwitcher"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BankSystemApp.UI.Views" xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+             mc:Ignorable="d" 
+             d:DesignHeight="120" d:DesignWidth="90">
+    <UserControl.DataContext>
+        <local:LangView/>
+    </UserControl.DataContext>
+    <Grid Background="{Binding dMod.brushBackgraund}">
+        <Border x:Name="lang_btn"
+                Background="{x:Null}" BorderBrush="{x:Null}">
+            <StackPanel>
+                <StackPanel HorizontalAlignment="Left" Margin="0" Width="100" Orientation="Horizontal">
+                    <fa:IconBlock Margin="0,0,0,6" Width="28" Padding="2" Icon="Language" FontSize="16" Foreground="{Binding dMod.brushForeground}" HorizontalAlignment="Left"/>
+                    <TextBlock Margin="0,6,0,0" Height="32" Text="Language" HorizontalAlignment="Left" Width="52" VerticalAlignment="Top" Foreground="{Binding dMod.brushForeground}"/>
+                </StackPanel>
+                <Button Grid.Row="2" Margin="0,5" Height="32" VerticalAlignment="Top" Width="90" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}"
+                        Command="{Binding Clients_btn_click}">
+                    <TextBlock Margin="0,10,0,0" Height="32" Text="Клиенты" HorizontalAlignment="Left" Width="50" VerticalAlignment="Top" Foreground="{Binding dMod.brushForeground}"/>
+                </Button>
+                <Button Grid.Row="2" Margin="0,5" Height="32" VerticalAlignment="Top" Width="90" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}"
+                        Command="{Binding Clients_btn_click}">
+                    <TextBlock Margin="0,10,0,0" Height="32" Text="Клиенты" HorizontalAlignment="Left" Width="50" VerticalAlignment="Top" Foreground="{Binding dMod.brushForeground}"/>
+                </Button>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace BankSystemApp
@@ -11,11 +12,20 @@ namespace BankSystemApp
     {
         private Action _action;
         private Func<bool> _canExecute;
+        public delegate void MouseAction(Button button);
+        private MouseAction _mouseAction;
+        private Button _button;
 
         public CommandHandler(Action action, Func<bool> canExecute)
         {
             _action = action;
             _canExecute = canExecute;
+        }
+        public CommandHandler(MouseAction mouseAction, Func<bool> canExecute, Button button)
+        {
+            _mouseAction = mouseAction;
+            _canExecute = canExecute;
+            _button = button;
         }
 
         public event EventHandler CanExecuteChanged
@@ -31,7 +41,10 @@ namespace BankSystemApp
 
         public void Execute(object parameter)
         {
-            _action();
+            if (_action != null)
+                _action();
+            if (_mouseAction != null && _button != null)
+                _mouseAction(_button);
         }
     }
 }
