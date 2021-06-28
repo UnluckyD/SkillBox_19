@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -13,19 +14,18 @@ namespace BankSystemApp.UI.Views
 {
     class MainViewModel : BindableBase
     {
-        public UI.DarkModLogic.DarkMod darkMod { get; set; } = Views.DM;
+        static double max = 118;
+        static double min = 30;
+        static double inc = 0.005;
+        public DarkModLogic.DarkMod darkMod { get; set; } = Views.DM;
         Classes.Connection connection = Classes.StaticModel.Connection;
-        public Button lang_btn { get; set; }
-        DoubleAnimation langAnimation = new DoubleAnimation() {
-            From = 0,
-            To = 90,
-            Duration = TimeSpan.FromMilliseconds(150)
-        } ;
+        
         public Classes.Connection Connection { get { return connection; } set { connection = value; 
                 RaisePropertyChanged("Connection"); RaisePropertyChanged("CurrentViewModel"); } }
+        double h = min;
+        public double Height { get { return h; } set { h = value; RaisePropertyChanged("Height"); } }
 
-        public Components.LangSwitcher LangViewModel { get; set; } = new Components.LangSwitcher();
-
+        public Components.LangSwitcher langView { get; set; } = new Components.LangSwitcher();
         IView currentViewModel = Views.homePage;
         public IView CurrentViewModel { get { return currentViewModel; } set { currentViewModel = value; RaisePropertyChanged("CurrentViewModel"); } }
 
@@ -40,14 +40,33 @@ namespace BankSystemApp.UI.Views
         }
         public ICommand LangAnimation
         {
-            get { return new CommandHandler((m) => 
-            { 
-                if (m.Height == 30)
-                    langAnimation.AutoReverse = false;
-                else
-                    langAnimation.AutoReverse = true;
-                m.BeginAnimation(Button.HeightProperty, langAnimation); 
-            }, () => Classes.StaticModel.model.CanExecute, lang_btn); }
+            get 
+            { return new CommandHandler(() => 
+                {
+                    if(Height <= min + 1)
+                    {
+                        Thread thread = new Thread(() => {
+                            for (double i = min; i < max; i += inc)
+                                App.Current.Dispatcher.Invoke(() => { Height = i; });
+                        })
+                        {
+                            IsBackground = true
+                        };
+                        thread.Start();
+                    }
+                    else
+                    {
+                        Thread thread = new Thread(() => {
+                            for (double i = max; i > min; i -= inc)
+                                App.Current.Dispatcher.Invoke(() => { Height = i; });
+                        })
+                        {
+                            IsBackground = true
+                        };
+                        thread.Start();
+                    }
+                }, () => Classes.StaticModel.model.CanExecute);
+            }
         }
 
         public ICommand Home_btn_click

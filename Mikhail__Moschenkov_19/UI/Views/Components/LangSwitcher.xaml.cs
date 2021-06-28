@@ -18,7 +18,7 @@ namespace BankSystemApp.UI.Views.Components
     /// <summary>
     /// Логика взаимодействия для LangSwitcher.xaml
     /// </summary>
-    public partial class LangSwitcher : UserControl
+    public partial class LangSwitcher : UserControl, IView
     {
         public LangSwitcher()
         {

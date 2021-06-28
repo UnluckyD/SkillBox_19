@@ -117,11 +117,14 @@
                            Foreground="{Binding darkMod.brushForeground}"/>
             </StackPanel>
         </Button>
-        <Button Content="{Binding LangViewModel}" 
-                x:Name="lang" HorizontalAlignment="Left" 
-                Width="90" Height="30"
+        <Button x:Name="lang" 
+                BorderBrush="{x:Null}" Background="{x:Null}"
+                HorizontalAlignment="Left" 
+                Content="{Binding langView}"
+                Width="90" Height="{Binding Height}"
                 Margin="60,10,0,0" Grid.Column="2"
-               VerticalAlignment="Top" Grid.Row="1">
+                VerticalAlignment="Top" Grid.Row="1" Grid.RowSpan="2"
+                Command="{Binding LangAnimation}">
         </Button>
 
         <Border Grid.Column="0" Grid.Row="1" 
@@ -270,5 +273,6 @@
                            Foreground="{Binding darkMod.brushForeground}"/>
             </StackPanel>
         </Button>
+        <ContentControl Content="{Binding lang_view}" Grid.Column="2" HorizontalAlignment="Left" Margin="60,40,0,0" Grid.Row="1" Grid.RowSpan="2" VerticalAlignment="Top" Width="90"/>
     </Grid>
 </Window>

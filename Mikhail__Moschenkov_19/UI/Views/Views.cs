@@ -21,7 +21,7 @@ namespace BankSystemApp.UI.Views
         public static Home.HomePage homePage = new Home.HomePage();
         public static Credits.CreditsView credits = new Credits.CreditsView();
         public static Contribution.ContributionsView contributions = new Contribution.ContributionsView();
-
+        public static Components.LangSwitcher langView = new Components.LangSwitcher();
         public static IView View { get { return GetCurrentView(); } }
         static IView GetCurrentView()
         {
