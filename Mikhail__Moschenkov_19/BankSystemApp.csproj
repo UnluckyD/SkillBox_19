@@ -154,6 +154,9 @@
       <DependentUpon>BindablePasswordBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\DarkModLogic\DarkMod.cs" />
+    <Compile Include="UI\Localization\CurrentLanguage.cs" />
+    <Compile Include="UI\Localization\Languages.cs" />
+    <Compile Include="UI\Localization\WordsEnum.cs" />
     <Compile Include="UI\Views\AllreadyLog.xaml.cs">
       <DependentUpon>AllreadyLog.xaml</DependentUpon>
     </Compile>
@@ -172,6 +175,7 @@
     <Compile Include="UI\Views\Components\LangSwitcher.xaml.cs">
       <DependentUpon>LangSwitcher.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\Views\Components\LanguageAnimationsParam.cs" />
     <Compile Include="UI\Views\Contributions\ContributionsView.xaml.cs">
       <DependentUpon>ContributionsView.xaml</DependentUpon>
     </Compile>

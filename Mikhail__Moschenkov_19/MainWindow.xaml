@@ -121,7 +121,7 @@
                 BorderBrush="{x:Null}" Background="{x:Null}"
                 HorizontalAlignment="Left" 
                 Content="{Binding langView}"
-                Width="90" Height="{Binding Height}"
+                Width="90" Height="{Binding languageAnimations.Height}"
                 Margin="60,10,0,0" Grid.Column="2"
                 VerticalAlignment="Top" Grid.Row="1" Grid.RowSpan="2"
                 Command="{Binding LangAnimation}">
@@ -147,8 +147,8 @@
                               Foreground="{Binding darkMod.brushForeground}" 
                               HorizontalAlignment="Left"/>
                 <TextBlock Margin="0,10,0,0" Height="32" 
-                           Text="Home" HorizontalAlignment="Left" 
-                           Width="42" VerticalAlignment="Top" 
+                           Text="{Binding currentLanguage.Home}" HorizontalAlignment="Left" 
+                           Width="52" VerticalAlignment="Top" 
                            Foreground="{Binding darkMod.brushForeground}"/>
             </StackPanel>
         </Button>
@@ -165,7 +165,7 @@
                               Foreground="{Binding darkMod.brushForeground}" 
                               HorizontalAlignment="Left"/>
                 <TextBlock Margin="0,10,0,0" Height="32" 
-                           Text="Клиенты" HorizontalAlignment="Left" 
+                           Text="{Binding currentLanguage.Clients}" HorizontalAlignment="Left" 
                            Width="50" VerticalAlignment="Top" 
                            Foreground="{Binding darkMod.brushForeground}"/>
             </StackPanel>
@@ -182,7 +182,7 @@
                               Foreground="{Binding darkMod.brushForeground}" 
                               HorizontalAlignment="Left"/>
                 <TextBlock Margin="0,10,0,0" 
-                           Height="32" Text="Счёт"
+                           Height="32" Text="{Binding currentLanguage.Account}"
                            HorizontalAlignment="Left" 
                            Width="42" VerticalAlignment="Top"
                            Foreground="{Binding darkMod.brushForeground}"/>
@@ -199,7 +199,7 @@
                               Padding="3" Icon="University"
                               FontSize="18" Foreground="{Binding darkMod.brushForeground}" HorizontalAlignment="Left"/>
                 <TextBlock Margin="0,10,0,0" Height="32" 
-                           Text="Кредит" 
+                           Text="{Binding currentLanguage.Credits}" 
                            HorizontalAlignment="Left" 
                            Width="42" 
                            VerticalAlignment="Top" 
@@ -221,7 +221,7 @@
                               Foreground="{Binding darkMod.brushForeground}"
                               HorizontalAlignment="Left"/>
                 <TextBlock Margin="0,10,0,0" 
-                           Height="32" Text="Вклад" 
+                           Height="32" Text="{Binding currentLanguage.Contributions}" 
                            HorizontalAlignment="Left" 
                            Width="42" 
                            VerticalAlignment="Top"
@@ -244,7 +244,7 @@
                               Foreground="{Binding darkMod.brushForeground}"
                               HorizontalAlignment="Left"/>
                 <TextBlock Margin="0,10,0,0"
-                           Height="32" Text="Настройки"
+                           Height="32" Text="{Binding currentLanguage.Settings}"
                            HorizontalAlignment="Left"
                            Width="60" VerticalAlignment="Top"
                            Foreground="{Binding darkMod.brushForeground}"/>

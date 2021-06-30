@@ -12,6 +12,7 @@ namespace BankSystemApp.UI.Views
 {
     class SettingsViewModel : BindableBase
     {
+        public Localization.CurrentLanguage currentLanguage = Classes.StaticModel.currentLanguage;
         PermisionsSettings.PermitionsDBWindow window;
         public Classes.Connection Connection { get; set; } = Classes.StaticModel.Connection;
         public DarkModLogic.DarkMod dMod { get; set; } = Views.DM;

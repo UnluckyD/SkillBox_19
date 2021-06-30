@@ -14,16 +14,16 @@ namespace BankSystemApp.UI.Views
 {
     class MainViewModel : BindableBase
     {
-        static double max = 118;
-        static double min = 30;
-        static double inc = 0.005;
+        public Localization.CurrentLanguage currentLanguage = Classes.StaticModel.currentLanguage;
         public DarkModLogic.DarkMod darkMod { get; set; } = Views.DM;
         Classes.Connection connection = Classes.StaticModel.Connection;
-        
+        public Components.LanguageAnimationsParam languageAnimations { get; set; } = Classes.StaticModel.languageAnimations;
         public Classes.Connection Connection { get { return connection; } set { connection = value; 
                 RaisePropertyChanged("Connection"); RaisePropertyChanged("CurrentViewModel"); } }
-        double h = min;
-        public double Height { get { return h; } set { h = value; RaisePropertyChanged("Height"); } }
+
+        //public double Height { 
+        //    get { return Components.LanguageAnimationsParam.h; } 
+        //    set { Components.LanguageAnimationsParam.h = value; RaisePropertyChanged("Height"); } }
 
         public Components.LangSwitcher langView { get; set; } = new Components.LangSwitcher();
         IView currentViewModel = Views.homePage;
@@ -43,28 +43,7 @@ namespace BankSystemApp.UI.Views
             get 
             { return new CommandHandler(() => 
                 {
-                    if(Height <= min + 1)
-                    {
-                        Thread thread = new Thread(() => {
-                            for (double i = min; i < max; i += inc)
-                                App.Current.Dispatcher.Invoke(() => { Height = i; });
-                        })
-                        {
-                            IsBackground = true
-                        };
-                        thread.Start();
-                    }
-                    else
-                    {
-                        Thread thread = new Thread(() => {
-                            for (double i = max; i > min; i -= inc)
-                                App.Current.Dispatcher.Invoke(() => { Height = i; });
-                        })
-                        {
-                            IsBackground = true
-                        };
-                        thread.Start();
-                    }
+                    languageAnimations.StartAnimation();
                 }, () => Classes.StaticModel.model.CanExecute);
             }
         }

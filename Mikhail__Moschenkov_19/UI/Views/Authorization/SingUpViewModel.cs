@@ -9,6 +9,7 @@ namespace BankSystemApp.UI.Views.Authorization
 {
     class SingUpViewModel
     {
+        public Localization.CurrentLanguage currentLanguage = Classes.StaticModel.currentLanguage;
         public string Login { get; set; }
         public string Password { get; set; }
         public DarkModLogic.DarkMod darkMod { get; set; } = Views.DM;

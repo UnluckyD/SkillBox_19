@@ -19,18 +19,18 @@
                 Background="{x:Null}" BorderBrush="{x:Null}" Command="{Binding ChangeMod_btn_click}" VerticalAlignment="Bottom">
             <StackPanel Orientation="Horizontal">
                 <fa:IconBlock Margin="1,2,0,0" Width="30" Padding="3" Icon="Adjust" FontSize="18" Foreground="{Binding dMod.brushForeground}" HorizontalAlignment="Left"/>
-                <TextBlock Text="Тема" Foreground="{Binding dMod.brushForeground}" Margin="1,4"/>
+                <TextBlock Text="{Binding currentLanguage.Theme}" Foreground="{Binding dMod.brushForeground}" Margin="1,4"/>
             </StackPanel>
         </Button>
-        <TextBlock Margin="10,5,0,0" Text="Connection String" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{Binding darkMod.brushForeground}"/>
+        <TextBlock Margin="10,5,0,0" Text="{Binding currentLanguage.Connection_string}" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{Binding darkMod.brushForeground}"/>
         <TextBox x:Name="tb_ConnectionStr" Margin="10,25,10,0" Text="{Binding StrConnection}" VerticalAlignment="Top"/>
-        <Button x:Name="btn_connect" Margin="5,23,5,0" Content="Connect" Command="{Binding btn_connect}" Foreground="{Binding dMod.brushForeground}"
+        <Button x:Name="btn_connect" Margin="5,23,5,0" Content="{Binding currentLanguage.Connection}" Command="{Binding btn_connect}" Foreground="{Binding dMod.brushForeground}"
                 IsEnabled="True" VerticalAlignment="Top" Grid.Column="1" BorderThickness="0" Background="{x:Null}">
         </Button>
-        <Button x:Name="btn_disconnect" Margin="5,53,5,0" Content="Disconnect" Command="{Binding btn_disconnect}" Foreground="{Binding dMod.brushForeground}"
+        <Button x:Name="btn_disconnect" Margin="5,53,5,0" Content="{Binding currentLanguage.Diconnection}" Command="{Binding btn_disconnect}" Foreground="{Binding dMod.brushForeground}"
                 IsEnabled="True" VerticalAlignment="Top" Grid.Column="1" BorderThickness="0" Background="{x:Null}">
         </Button>
-        <Button Margin="5,45" Content="Roles" Command="{Binding Roles_btn}" Foreground="{Binding dMod.brushForeground}" IsEnabled="{Binding Connection.IsConnectedAsAdmin}"
+        <Button Margin="5,45" Content="{Binding currentLanguage.Roles}" Command="{Binding Roles_btn}" Foreground="{Binding dMod.brushForeground}" IsEnabled="{Binding Connection.IsConnectedAsAdmin}"
                 VerticalAlignment="Bottom" Grid.Column="1" BorderThickness="0" Background="{x:Null}" BorderBrush="{x:Null}">
         </Button>
     </Grid>

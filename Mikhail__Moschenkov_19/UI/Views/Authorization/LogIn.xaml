@@ -32,7 +32,7 @@
                               Icon="Keycdn" FontSize="18" 
                               Foreground="{Binding dMod.brushForeground}" 
                               HorizontalAlignment="Left"/>
-                <TextBlock Text="Войти" Foreground="{Binding dMod.brushForeground}" Margin="1,4"/>
+                <TextBlock Text="{Binding currentLanguage.Enter}" Foreground="{Binding dMod.brushForeground}" Margin="1,4"/>
             </StackPanel>
         </Button>
     </Grid>

@@ -14,6 +14,7 @@ namespace BankSystemApp.Classes
         {
             Login = "guest"
         };
+        UI.Localization.CurrentLanguage currentLanguage = StaticModel.currentLanguage;
 
         public Authorization User { get { return user; } 
             private set { user = value; 
@@ -32,7 +33,7 @@ namespace BankSystemApp.Classes
 
         public bool IsConnectedAsAdmin { get { return (isConnected && user.role == Role.ADMINISTRATOR); } }
 
-        public string Status { get { return IsConnected ? "Logout" : "Login"; } }
+        public string Status { get { return GetStatus(); } }
 
         public string ConnectionInfo { get { return StaticModel.model.GetConnectionInfo(user); } }
         public string ConnectionFullInfo { get { return StaticModel.model.GetConnectionFullInfo(user); } }
@@ -44,7 +45,7 @@ namespace BankSystemApp.Classes
         {
             try
             {
-                var _User = Classes.StaticModel.model.Authorization.FirstOrDefault(u => u.Login.Trim(' ') == login && u.Password.Trim(' ') == pass);
+                var _User = StaticModel.model.Authorization.FirstOrDefault(u => u.Login.Trim(' ') == login && u.Password.Trim(' ') == pass);
                 if (_User != null)
                 {
                     User = _User;
@@ -76,6 +77,26 @@ namespace BankSystemApp.Classes
             {
                 Alerts.MsgError(ex.Message);
                 return false;
+            }
+        }
+
+        string GetStatus()
+        {
+            try
+            {
+                if (currentLanguage != null)
+                {
+                    if (IsConnected)
+                        return currentLanguage.Logout;
+                    else
+                        return currentLanguage.Login;
+                }
+                else return "";
+            }
+            catch (Exception ex)
+            {
+                Alerts.MsgError(ex.Message);
+                return "";
             }
         }
     }

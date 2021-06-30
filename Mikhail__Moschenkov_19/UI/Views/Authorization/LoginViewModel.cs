@@ -9,7 +9,7 @@ namespace BankSystemApp.UI.Views.Authorization
 {
     class LoginViewModel
     {
-        Views views = new Views();
+        public Localization.CurrentLanguage currentLanguage = Classes.StaticModel.currentLanguage;
         public string Login { get; set; }
         public string Password { get; set; }
         public DarkModLogic.DarkMod darkMod { get; set; } = Views.DM;
